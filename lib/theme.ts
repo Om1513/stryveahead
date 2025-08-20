@@ -25,6 +25,11 @@ export const colors = {
     800: '#27272a',
     900: '#18181b',
   },
+  // Figma-specific colors
+  soft: '#F5F5F5',
+  heading: '#3C3C3C',
+  paragraph: '#6A6A6A',
+  white: '#FFF',
 } as const
 
 export const spacing = {

@@ -1,36 +1,58 @@
 interface StatProps {
   number: string
   label: string
-  description?: string
   highlighted?: boolean | undefined
+  onMouseEnter?: () => void
 }
 
-export default function Stat({ number, label, description, highlighted = false }: StatProps) {
+export default function Stat({ number, label, highlighted = false, onMouseEnter }: StatProps) {
   return (
-    <div className={`text-center p-8 rounded-2xl transition-all duration-200 motion-reduce:transition-none ${
-      highlighted 
-        ? 'bg-gradient-hero text-white shadow-large scale-105' 
-        : 'bg-white shadow-soft hover:shadow-large hover:-translate-y-1 motion-reduce:hover:translate-y-0'
-    }`}>
-      <div className={`text-4xl font-bold mb-2 font-poppins ${
-        highlighted ? 'text-white' : 'text-neutral-900'
-      }`}>
-        {number}
-      </div>
-      
-      <div className={`text-h6 font-semibold mb-2 font-poppins ${
-        highlighted ? 'text-orange-100' : 'text-neutral-700'
-      }`}>
-        {label}
-      </div>
-      
-      {description && (
-        <p className={`text-body-sm ${
-          highlighted ? 'text-orange-50' : 'text-neutral-500'
-        }`}>
-          {description}
-        </p>
+    <div 
+      className={`relative w-[293px] h-[152px] rounded-2xl shadow-[24px_30px_51px_0_rgba(0,0,0,0.10)] mx-auto transition-all duration-200 ease-out motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 ${
+        highlighted 
+          ? 'bg-gradient-to-br from-[#F25227] to-[#E8AA29] shadow-[24px_30px_51px_0_rgba(0,0,0,0.15)]' 
+          : 'bg-white'
+      }`}
+      tabIndex={0}
+      role="article"
+      aria-label={`Statistic: ${number} ${label}`}
+      onMouseEnter={onMouseEnter}
+    >
+      {/* Decorative Background Elements for Highlighted Card */}
+      {highlighted && (
+        <>
+          <div className="absolute -left-[58px] top-9 w-[164px] h-[190px] rounded-[80px] bg-white opacity-5" />
+          <div className="absolute right-[-58px] -top-[102px] w-[164px] h-[190px] rounded-[20px] bg-white opacity-5" />
+        </>
       )}
+
+      {/* Decorative Background Elements for Regular Cards */}
+      {!highlighted && (
+        <>
+          <div className="absolute -left-[58px] top-9 w-[164px] h-[190px] rounded-[80px] bg-white opacity-5" />
+          <div className="absolute right-[-58px] -top-[102px] w-[164px] h-[190px] rounded-[20px] bg-white opacity-5" />
+        </>
+      )}
+
+      {/* Content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-8 py-8">
+        <div className="flex flex-col items-center gap-2">
+          <div 
+            className={`font-asap font-bold text-[50px] leading-[56px] transition-colors duration-200 ease-out motion-reduce:transition-none ${
+              highlighted ? 'text-white' : 'text-[#3C3C3C]'
+            }`}
+          >
+            {number}
+          </div>
+          <div 
+            className={`font-asap font-bold text-[21px] leading-[24px] text-center transition-colors duration-200 ease-out motion-reduce:transition-none ${
+              highlighted ? 'text-white' : 'text-[#6A6A6A]'
+            }`}
+          >
+            {label}
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

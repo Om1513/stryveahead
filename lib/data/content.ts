@@ -13,23 +13,29 @@ export const heroContent = {
 }
 
 export const servicesContent = {
-  title: "Our Services",
-  description: "Comprehensive financial solutions designed to help you achieve your goals and secure your financial future with confidence.",
+  title: "Enjoy Our Excellent Service",
+  description: "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.",
   services: [
     {
-      id: "investment-planning",
-      title: 'Investment Planning',
-      description: 'Strategic investment solutions tailored to your risk tolerance and financial goals. Build a diversified portfolio for long-term growth.'
+      id: "support-system",
+      title: 'Support System',
+      description: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.',
+      icon: 'support_agent',
+      variant: 'default' as const
     },
     {
-      id: "risk-management",
-      title: 'Risk Management',
-      description: 'Comprehensive risk assessment and mitigation strategies to protect your wealth and ensure financial security for you and your family.'
+      id: "financial-management",
+      title: 'Financial Management',
+      description: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.',
+      icon: 'account_balance_wallet',
+      variant: 'featured' as const
     },
     {
-      id: "portfolio-analysis",
-      title: 'Portfolio Analysis',
-      description: 'In-depth analysis of your current investments with actionable insights to optimize performance and maximize returns.'
+      id: "safety-compliance",
+      title: 'Safety Compliance',
+      description: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.',
+      icon: 'admin_panel_settings',
+      variant: 'default' as const
     }
   ]
 }
@@ -52,99 +58,94 @@ export const aboutContent = {
 }
 
 export const statsContent = {
-  title: "Trusted by Hundreds",
-  description: "Our track record speaks for itself. See why clients trust us with their financial future.",
+  title: "Our History",
   stats: [
     {
-      id: "happy-clients",
-      number: '500+',
-      label: 'Happy Clients',
-      description: 'Satisfied customers worldwide'
+      id: "years-experience",
+      number: '20+',
+      label: 'Years Experience'
     },
     {
-      id: "assets-managed",
-      number: '$50M+',
-      label: 'Assets Managed',
-      description: 'Total portfolio value',
+      id: "happy-clients",
+      number: '5K',
+      label: 'Happy Clients',
       highlighted: true
     },
     {
-      id: "years-experience",
-      number: '15+',
-      label: 'Years Experience',
-      description: 'In financial consulting'
+      id: "success-rate",
+      number: '99,9%',
+      label: 'Succesfull Project'
     },
     {
-      id: "success-rate",
-      number: '98%',
-      label: 'Success Rate',
-      description: 'Client satisfaction score'
+      id: "expert-staff",
+      number: '520+',
+      label: 'Expert Staff'
     }
   ]
 }
 
 export const teamContent = {
-  title: "Meet Our Expert Team",
-  description: "Our experienced financial advisors are dedicated to helping you achieve your financial goals with personalized strategies and expert guidance.",
+  title: "Meet With Our Executive Team",
+  description: "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.",
   members: [
     {
-      id: "sarah-johnson",
-      name: 'Sarah Johnson',
-      title: 'CEO & Senior Financial Advisor',
-      bio: 'With over 20 years in financial planning, Sarah leads our team with expertise in investment strategies and wealth management.',
-      email: 'sarah@finanxe.com',
-      phone: '+1 (555) 123-4567',
-      imageUrl: '/images/team/member-1.png'
+      id: "robby-jhony",
+      name: 'Robby Jhony',
+      title: 'Founder',
+      imageUrl: 'https://api.builder.io/api/v1/image/assets/TEMP/24cb6b4d70ca9b341bc4165f1bb49f9eb972f999?width=522',
+      featured: true
     },
     {
-      id: "michael-chen",
-      name: 'Michael Chen',
-      title: 'Investment Strategist',
-      bio: 'Michael specializes in portfolio optimization and risk management, helping clients maximize returns while minimizing risk.',
-      email: 'michael@finanxe.com',
-      imageUrl: '/images/team/member-2.png'
+      id: "erlina-angel",
+      name: 'Erlina Angel',
+      title: 'CEO',
+      imageUrl: 'https://api.builder.io/api/v1/image/assets/TEMP/eb8841367628afd2f3fd8c458db60c153e0fe02f?width=522'
     },
     {
-      id: "emily-rodriguez",
-      name: 'Emily Rodriguez',
-      title: 'Tax Planning Specialist',
-      bio: 'Emily brings deep expertise in tax-efficient investing and estate planning to help clients preserve and grow their wealth.',
-      email: 'emily@finanxe.com',
-      phone: '+1 (555) 123-4569',
-      imageUrl: '/images/team/member-3.png'
+      id: "ellisa-maryah",
+      name: 'Ellisa Maryah',
+      title: 'Manager',
+      imageUrl: 'https://api.builder.io/api/v1/image/assets/TEMP/8e13cd570a97a4eb26002d1db489c81c002e8f5d?width=522'
     },
     {
-      id: "david-thompson",
-      name: 'David Thompson',
-      title: 'Retirement Planning Expert',
-      bio: 'David focuses on retirement planning strategies, ensuring clients are prepared for a secure and comfortable future.',
-      email: 'david@finanxe.com',
-      imageUrl: '/images/team/member-4.png'
+      id: "richo-night",
+      name: 'Richo Night',
+      title: 'Consultation',
+      imageUrl: 'https://api.builder.io/api/v1/image/assets/TEMP/4dda93fa7b58bd543ac67d962d35a510871dca0d?width=522'
     }
   ]
 }
 
 export const testimonialsContent = {
   title: "What They Say",
-  description: "Don't just take our word for it. Here's what our satisfied clients have to say about their experience working with our team.",
+  description: "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.",
   testimonials: [
     {
-      id: "jennifer-walsh",
-      quote: "The team at Finanxe completely transformed our investment strategy. Their personalized approach and expert guidance helped us achieve returns we never thought possible.",
-      name: "Jennifer Walsh",
-      title: "CEO",
-      company: "TechStart Inc",
-      rating: 5,
-      imageUrl: "/images/testimonials/avatar-1.png"
+      id: "jhon-merrasi",
+      name: "Jhon Merrasi",
+      role: "Our Customers",
+      imageUrl: "https://api.builder.io/api/v1/image/assets/TEMP/dea2198a686ce13b162a94d2bce4e24d2b182d34?width=128",
+      position: "bottom-left" as const,
+      quote: undefined,
+      featured: undefined
     },
     {
-      id: "robert-martinez",
-      quote: "Professional, knowledgeable, and always available when we need them. They made complex financial planning simple and stress-free for our family.",
-      name: "Robert Martinez",
-      title: "Small Business Owner",
-      company: "Martinez Construction",
-      rating: 5,
-      imageUrl: "/images/testimonials/avatar-2.png"
+      id: "angel-mersic",
+      name: "Angel Mersic",
+      role: "Our Customers",
+      imageUrl: "https://api.builder.io/api/v1/image/assets/TEMP/cace11a1fa4ff91a8724f7a7e3b4b7ad5891d48f?width=128",
+      position: "top-center" as const,
+      quote: undefined,
+      featured: undefined
+    },
+    {
+      id: "chena-williams",
+      name: "Chena Williams",
+      role: "Our Customers",
+      quote: "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.",
+      imageUrl: "https://api.builder.io/api/v1/image/assets/TEMP/e95d24fa53c04540e72375f95e1d13e966de9189?width=128",
+      position: "bottom-right" as const,
+      featured: true
     }
   ]
 }

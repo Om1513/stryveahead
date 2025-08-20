@@ -1,73 +1,77 @@
 import Image from 'next/image'
-import { Card, CardContent } from '@/components/ui/card'
-import { Star, Quote } from 'lucide-react'
+import { TestimonialData, TestimonialPosition } from '@/types/testimonials'
 
-interface TestimonialProps {
-  quote: string
-  name: string
-  title: string
-  company: string
-  rating: number
-  imageUrl: string
+interface TestimonialProps extends TestimonialData {
+  position: TestimonialPosition
 }
 
 export default function Testimonial({ 
-  quote, 
   name, 
-  title, 
-  company, 
-  rating,
-  imageUrl 
+  role, 
+  imageUrl,
+  position,
+  quote,
+  featured = false
 }: TestimonialProps) {
+  // Position classes based on Figma design - using responsive positioning
+  const getPositionClasses = () => {
+    if (position === 'mobile') {
+      return 'relative w-full'
+    }
+    
+    const positions = {
+      'bottom-left': 'absolute xl:left-[21%] xl:top-[49%] lg:left-[15%] lg:top-[55%] md:left-[10%] md:top-[60%]',
+      'top-center': 'absolute xl:left-[44.5%] xl:top-[40%] lg:left-[42%] lg:top-[45%] md:left-[40%] md:top-[50%]',
+      'bottom-right': 'absolute xl:left-[60.7%] xl:top-[65%] lg:left-[58%] lg:top-[70%] md:left-[55%] md:top-[75%]'
+    }
+    
+    return positions[position]
+  }
+
+  const cardWidth = position === 'bottom-right' && featured ? 'w-[444px]' : position === 'mobile' ? 'w-full' : 'w-[232px]'
+  const contentGap = featured ? 'gap-6' : 'gap-6'
+
   return (
-    <Card className="h-full border-0 shadow-soft hover:shadow-large transition-all duration-200 group hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
-      <CardContent className="p-8">
-        {/* Quote Icon */}
-        <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-orange-200 transition-colors duration-200 motion-reduce:transition-none">
-          <Quote className="h-6 w-6 text-orange-600" />
-        </div>
+    <div className={`${getPositionClasses()} z-20`}>
+      <div 
+        className={`group inline-flex p-4 items-start gap-4 rounded-2xl bg-white shadow-[24px_30px_51px_0_rgba(0,0,0,0.10)] hover:shadow-[24px_30px_51px_0_rgba(0,0,0,0.15)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 ease-out focus-within:shadow-[24px_30px_51px_0_rgba(0,0,0,0.15)] focus-within:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:transform-none motion-reduce:focus-within:transform-none motion-reduce:active:transform-none ${cardWidth} max-md:w-full`}
+        tabIndex={0}
+        role="article"
+        aria-label={`Testimonial from ${name}, ${role}`}
+      >
+        {/* Profile Image */}
+        <Image
+          src={imageUrl}
+          alt={name}
+          width={64}
+          height={64}
+          className="rounded-full flex-shrink-0 transition-transform duration-300 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:transform-none"
+        />
         
-        {/* Rating */}
-        <div className="flex gap-1 mb-4">
-          {[...Array(5)].map((_, i) => (
-            <Star
-              key={i}
-              className={`h-5 w-5 ${
-                i < rating 
-                  ? 'text-orange-400 fill-orange-400' 
-                  : 'text-neutral-300'
-              }`}
-            />
-          ))}
-        </div>
-        
-        {/* Quote */}
-        <blockquote className="text-body text-neutral-700 leading-relaxed mb-6 italic">
-          &ldquo;{quote}&rdquo;
-        </blockquote>
-        
-        {/* Author */}
-        <div className="flex items-center gap-4">
-          <div className="relative w-12 h-12 rounded-full overflow-hidden">
-            <Image
-              src={imageUrl}
-              alt={name}
-              fill
-              className="object-cover"
-              sizes="48px"
-            />
-          </div>
-          
-          <div>
-            <cite className="text-body-sm font-semibold text-neutral-900 not-italic">
+        {/* Content */}
+        <div className={`flex flex-col items-start ${contentGap}`}>
+          {/* Name and Role */}
+          <div className="flex flex-col items-start gap-2">
+            <h3 className="text-heading font-asap text-[21px] font-bold leading-6">
               {name}
-            </cite>
-            <p className="text-body-sm text-neutral-500">
-              {title} at {company}
+            </h3>
+            <p className={`font-asap text-base font-semibold leading-6 ${
+              featured 
+                ? 'bg-gradient-to-r from-[#F25227] to-[#E8AA29] bg-clip-text text-transparent' 
+                : 'text-paragraph'
+            }`}>
+              {role}
             </p>
           </div>
+          
+          {/* Quote (only for featured testimonial) */}
+          {quote && featured && (
+            <p className="max-w-[332px] text-paragraph font-plus-jakarta text-base leading-6">
+              &ldquo;{quote}&rdquo;
+            </p>
+          )}
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   )
 }
