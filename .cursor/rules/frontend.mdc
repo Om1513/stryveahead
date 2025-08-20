@@ -1,0 +1,54 @@
+---
+alwaysApply: true
+---
+# Frontend Rules – Finanxe Landing
+
+## Framework and Rendering
+- Use Next.js App Router. Prefer server components; use client components only for interactivity.
+- The landing page is static by default. Avoid client data fetching.
+
+## Styling and Tokens
+- TailwindCSS is the primary styling method.
+- All colors, radii, shadows, and any off-scale spacing are defined in Tailwind theme extensions or a theme helper. Do not hardcode hex values in components.
+- Mobile-first responsive classes. Validate layouts at 360, 768, 1024, 1280, 1440 widths.
+
+## Typography
+- Load fonts with next/font and apply font variables at the html root in layout.tsx.
+- Match Figma font sizes, weights, line heights, and letter spacing exactly.
+- Enforce a semantic heading hierarchy that matches the visual order.
+
+## Components
+- Create Container for consistent max-width and horizontal padding that matches the Figma grid.
+- Build sections as separate components: Header, Hero, Services, About, Stats, Team, Testimonials, Cta, Footer.
+- Extract small building blocks: ServiceCard, Stat, TeamCard, Testimonial, FeatureItem, etc.
+- All component props are typed and minimal.
+
+## shadcn/ui and Icons
+- Add only the components you need, such as Button, Card, Input, Badge.
+- Do not edit library internals; wrap for variations.
+- Use lucide-react icons with consistent size and stroke.
+
+## Layout and Pixel Perfection
+- Recreate the Figma grid and container width. Align spacing to tokens.
+- Use an overlay or side-by-side comparison to confirm 1-to-1 alignment.
+- If Figma uses unique spacing not on the scale, add it to the theme; do not guess.
+
+## Images and Media
+- Use next/image for all images. Provide width, height, and sizes attributes.
+- Mark above-the-fold images as priority.
+- Decorative images should have empty alt to avoid noise for assistive tech.
+
+## Interactions and Motion
+- Buttons and links require hover and focus-visible states.
+- Use lightweight CSS transitions. Avoid heavy animation libraries.
+- Respect reduced-motion preferences.
+
+## Global Styles
+- Keep globals.css minimal. Add only shared utilities such as gradient or dotted patterns needed by the design.
+- No global resets beyond Tailwind’s preflight unless required by the design.
+
+## QA Checklist per Section
+- Figma spacing, radius, and shadow parity.
+- Keyboard traversal works.
+- Text wraps gracefully at all breakpoints.
+- Images are crisp, correctly sized, and not stretched.

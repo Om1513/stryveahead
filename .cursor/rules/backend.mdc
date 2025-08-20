@@ -1,0 +1,40 @@
+---
+alwaysApply: true
+---
+
+# Backend Rules – Finanxe Landing
+
+## Scope
+- Minimal backend for a newsletter or contact form only.
+- All other content is static.
+
+## API Route
+- Location: app/api/subscribe/route.ts using NextResponse.
+- Accept method: POST.
+- Request body contains an email string only.
+
+## Validation and Errors
+- Validate input with Zod. Trim and lowercase email.
+- On invalid input, return status 400 with a small json payload that includes ok false and error message.
+- On unexpected errors, return status 500 with a generic message. Do not leak stack traces.
+
+## Responses
+- Success structure: ok true and a human-friendly message.
+- Error structure: ok false and a concise error string.
+
+## Security and Safety
+- Never log personally identifiable information.
+- Consider a simple rate limit if the endpoint is public.
+- Use HTTP-only cookies or origin checks only if needed later; v1 can remain stateless.
+
+## Persistence
+- v1 can mock success without a database.
+- If storage is added, implement a storage interface so the backend can switch between providers without touching route logic.
+
+## Performance
+- Keep the route synchronous and small. Avoid heavy dependencies.
+- Return quickly and provide UI feedback optimistically on the frontend.
+
+## Testing
+- Unit test the validator for valid and invalid email cases.
+- Exercise the route with good and bad payloads and verify status codes and payload shapes.

@@ -1,0 +1,42 @@
+---
+alwaysApply: true
+---
+# General Project Rules – Finanxe Landing
+
+## Mission
+Pixel-perfect landing page that matches the Figma design using Next.js App Router, React, Tailwind CSS, and shadcn/ui.
+
+## Ground Rules
+- Ship complete files with imports and types. No placeholders or ellipses.
+- Use TypeScript across the project. Disallow implicit any.
+- One component = one responsibility. Keep components small and pure.
+- Order of priorities: accessibility, performance, maintainability, then micro-optimizations.
+- The build must match Figma exactly for spacing, typography, radii, shadows, and layout.
+
+## Accessibility
+- All interactive elements are keyboard accessible and have visible focus states.
+- Every image has alt text. Decorative images use empty alt.
+- Use a single h1 per page, then h2 for major sections, h3 for subsections.
+- Maintain color contrast that meets WCAG AA or better.
+
+## Performance
+- Lighthouse: desktop >= 95, mobile >= 90.
+- First-load JavaScript < 130 kB gzipped whenever possible.
+- Load fonts with next/font; do not use CSS @import.
+- Use next/image for all images with correct width, height, and sizes.
+
+## File Structure
+- app: layout.tsx, page.tsx, globals.css, fonts, images
+- components: Header, Hero, Services, About, Stats, Team, Testimonials, Cta, Footer, shared primitives
+- lib: theme tokens, small utilities
+
+## Commit Rules
+- Commit per section or component with clear scope.
+- Run lint and typecheck before pushing.
+- PR checklist: accessibility, performance, token usage, and Figma parity.
+
+## Definition of Done
+- Visual parity verified against Figma for all sections.
+- Accessibility checks pass via keyboard and screen-reader basics.
+- Performance budget met and images optimized.
+- Deployed preview link available.
