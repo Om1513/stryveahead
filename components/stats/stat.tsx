@@ -10,7 +10,7 @@ export default function Stat({ number, label, highlighted = false, onMouseEnter 
     <div 
       className={`relative w-[293px] h-[152px] rounded-2xl shadow-[24px_30px_51px_0_rgba(0,0,0,0.10)] mx-auto transition-all duration-200 ease-out motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 ${
         highlighted 
-          ? 'bg-gradient-to-br from-[#F25227] to-[#E8AA29] shadow-[24px_30px_51px_0_rgba(0,0,0,0.15)]' 
+          ? 'bg-gradient-hero shadow-[24px_30px_51px_0_rgba(0,0,0,0.15)]' 
           : 'bg-white'
       }`}
       tabIndex={0}
@@ -46,7 +46,7 @@ export default function Stat({ number, label, highlighted = false, onMouseEnter 
           </div>
           <div 
             className={`font-asap font-bold text-[21px] leading-[24px] text-center transition-colors duration-200 ease-out motion-reduce:transition-none ${
-              highlighted ? 'text-white' : 'text-[#6A6A6A]'
+              highlighted ? 'text-white' : 'text-paragraph'
             }`}
           >
             {label}

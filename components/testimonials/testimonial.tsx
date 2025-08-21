@@ -57,7 +57,7 @@ export default function Testimonial({
             </h3>
             <p className={`font-asap text-base font-semibold leading-6 ${
               featured 
-                ? 'bg-gradient-to-r from-[#F25227] to-[#E8AA29] bg-clip-text text-transparent' 
+                ? 'bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent' 
                 : 'text-paragraph'
             }`}>
               {role}

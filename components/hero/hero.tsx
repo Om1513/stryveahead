@@ -55,14 +55,14 @@ export default function Hero() {
           {/* Hero Image */}
           <div className="relative lg:h-[592px] h-[400px] lg:ml-12">
             <div className="absolute inset-0 rounded-2xl shadow-[24px_30px_51px_0px_rgba(0,0,0,0.1)] overflow-hidden">
-              <Image
-                src="/images/hero/dashboard-preview.png"
-                alt=""
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-              />
+              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                <div className="text-center text-gray-600 px-8">
+                  <div className="text-4xl font-bold mb-4">StryveAhead</div>
+                  <div className="text-2xl font-semibold mb-6">Growth Intelligence Suite</div>
+                  <div className="text-lg">Dashboard Preview</div>
+                  <div className="text-base mt-4 opacity-75">Real-time Q-Commerce Analytics</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

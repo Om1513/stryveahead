@@ -32,10 +32,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Finanxe - Driving Financial Growth Through Our Expertise and Passion',
-  description: 'Professional financial services company specializing in wealth preservation and growth. Expert financial advisory with 20+ years of experience.',
-  keywords: ['financial services', 'wealth management', 'financial advisory', 'investment planning'],
-  authors: [{ name: 'Finanxe' }],
+  title: 'StryveAhead - Scale Your Brand Across Q-Commerce, E-Commerce & Modern Trade',
+  description: 'Your trusted partner for scaling brands across Q-Commerce, E-Commerce, and Modern Trade. We specialise in helping brands establish strong presence, optimise operations, and achieve long-term growth.',
+  keywords: ['q-commerce', 'e-commerce', 'modern trade', 'brand scaling', 'growth intelligence', 'brand advisory'],
+  authors: [{ name: 'StryveAhead Advisors' }],
 }
 
 export const viewport = {

@@ -4,41 +4,55 @@ interface ServiceCardProps {
   title: string
   description: string
   icon: React.ReactNode
-  variant?: 'default' | 'featured'
   className?: string
+  position: 'left' | 'center' | 'right'
+  isAnimating?: boolean
 }
 
 export default function ServiceCard({ 
   title, 
   description, 
   icon, 
-  variant = 'default',
-  className 
+  className,
+  position,
+  isAnimating = false
 }: ServiceCardProps) {
-  const isDefault = variant === 'default'
-  const isFeatured = variant === 'featured'
+  const isLeftPosition = position === 'left'
+  const isRightPosition = position === 'right'
+  const isCenter = position === 'center'
 
   return (
     <div 
       className={cn(
-        'relative w-full',
-        isFeatured ? 'h-[336px]' : 'h-[464px]',
+        'relative w-full transition-all motion-reduce:transition-none',
+        // All cards have the same height for proper alignment at inner edges
+        'h-[350px]',
+        isAnimating ? 'duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]' : 'duration-300 ease-out',
+        // Position-based styling - butterfly structure with center smaller and sides bigger
+        position === 'left' && 'opacity-85 scale-125 translate-x-4',
+        position === 'center' && 'opacity-100 scale-90 translate-x-0 z-10',
+        position === 'right' && 'opacity-85 scale-125 -translate-x-4',
         className
       )}
+      aria-label={`${title} service - ${position} position`}
     >
       {/* Card Background */}
-      {isFeatured ? (
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#F25227] via-[#F25227] to-[#E8AA29] shadow-[24px_30px_51px_0_rgba(0,0,0,0.10)]" />
+      {isCenter ? (
+        <div className={cn(
+          "absolute inset-0 rounded-2xl bg-gradient-hero transition-all duration-200 ease-out",
+          "shadow-[32px_38px_65px_0_rgba(0,0,0,0.15)]"
+        )} />
       ) : (
         <svg 
-          className="absolute inset-0 w-full h-full drop-shadow-[24px_30px_51px_rgba(0,0,0,0.10)]" 
-          viewBox="0 0 490 562" 
+          className="absolute inset-0 w-full h-full transition-all duration-200 ease-out drop-shadow-[24px_30px_51px_rgba(0,0,0,0.10)]" 
+          viewBox="0 0 490 350" 
           fill="none"
+          preserveAspectRatio="none"
         >
           <path 
-            d={isDefault 
-              ? "M415 37.5595C415 27.7843 406.312 20.294 396.643 21.734L40.643 74.7559C32.8032 75.9235 27 82.655 27 90.5813V405.423C27 413.255 32.6689 419.935 40.396 421.21L396.396 479.931C406.141 481.539 415 474.021 415 464.145V37.5595Z"
-              : "M27 37.5595C27 27.7843 35.6885 20.294 45.357 21.734L401.357 74.7559C409.197 75.9235 415 82.655 415 90.5813V405.423C415 413.255 409.331 419.935 401.604 421.21L45.604 479.931C35.8595 481.539 27 474.021 27 464.145V37.5595Z"
+            d={isLeftPosition 
+              ? "M490 25C490 15 485 0 475 0L20 20C10 22 0 30 0 40V310C0 320 10 328 20 330L475 350C485 350 490 335 490 325V25Z"
+              : "M0 25C0 15 5 0 15 0L470 20C480 22 490 30 490 40V310C490 320 480 328 470 330L15 350C5 350 0 335 0 325V25Z"
             }
             fill="white"
           />
@@ -47,35 +61,37 @@ export default function ServiceCard({
 
       {/* Content Container */}
       <div className={cn(
-        'absolute flex flex-col items-center',
-        isFeatured 
-          ? 'inset-x-[53px] inset-y-[56px] text-center text-white'
-          : title === 'Safety Compliance'
-            ? 'right-[56px] top-[120px] w-[277px] text-right text-heading'
-            : 'left-[55px] top-[120px] w-[277px] text-left text-heading'
+        'absolute flex flex-col items-center transition-all duration-200 ease-out',
+        isCenter 
+          ? 'inset-x-[50px] inset-y-[50px] text-center text-white'
+          : isRightPosition
+            ? 'right-[20px] top-[60px] w-[350px] text-right text-heading'
+            : 'left-[20px] top-[60px] w-[350px] text-left text-heading'
       )}>
         {/* Icon */}
         <div className={cn(
-          'w-16 h-16 flex items-center justify-center mb-6',
-          title === 'Safety Compliance' ? 'ml-auto' : isFeatured ? 'mx-auto' : 'mr-auto'
+          'flex items-center justify-center mb-6 transition-transform duration-200 ease-out',
+          isCenter ? 'w-16 h-16' : 'w-16 h-16',
+          isRightPosition ? 'ml-auto' : isCenter ? 'mx-auto' : 'mr-auto',
+          position === 'center' && 'scale-110'
         )}>
           {icon}
         </div>
 
         {/* Text Content */}
         <div className={cn(
-          'w-full',
-          isFeatured ? 'text-center' : title === 'Safety Compliance' ? 'text-right' : 'text-left'
+          'w-full transition-all duration-200 ease-out',
+          isCenter ? 'text-center' : isRightPosition ? 'text-right' : 'text-left'
         )}>
           <h3 className={cn(
-            'font-asap text-[28px] font-bold leading-8 mb-[14px]',
-            isFeatured ? 'text-white' : 'text-heading'
+            'font-asap font-bold leading-8 mb-[14px] transition-colors duration-200 ease-out',
+            isCenter ? 'text-[26px] text-white' : 'text-[24px] text-heading'
           )}>
             {title}
           </h3>
           <p className={cn(
-            'font-plus-jakarta text-base font-normal leading-6',
-            isFeatured ? 'text-white' : 'text-paragraph'
+            'font-plus-jakarta font-normal leading-6 transition-colors duration-200 ease-out',
+            isCenter ? 'text-base text-white' : 'text-sm text-paragraph'
           )}>
             {description}
           </p>

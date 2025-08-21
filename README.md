@@ -1,6 +1,6 @@
-# Finanxe Landing Page
+# StryveAhead Landing Page
 
-A modern, pixel-perfect landing page for Finanxe financial services company built with Next.js 14, React, TypeScript, and Tailwind CSS.
+A modern, pixel-perfect landing page for StryveAhead Advisors specializing in Q-Commerce, E-Commerce, and Modern Trade brand scaling built with Next.js 14, React, TypeScript, and Tailwind CSS.
 
 ## Project Foundation - Phase 1 ✅
 

@@ -64,7 +64,7 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom Finanxe colors from theme tokens
+        // Custom StryveAhead colors from theme tokens
         ...colors,
       },
       borderRadius: {

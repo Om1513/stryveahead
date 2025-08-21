@@ -88,6 +88,8 @@ export const shadows = {
   medium: '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
   large: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
   inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+  serviceCard: '24px 30px 51px 0 rgba(0, 0, 0, 0.10)',
+  serviceCardFocus: '32px 38px 65px 0 rgba(0, 0, 0, 0.15)',
 } as const
 
 export const breakpoints = {
@@ -100,7 +102,7 @@ export const breakpoints = {
 
 export const gradients = {
   hero: 'linear-gradient(135deg, #F25227 0%, #E8AA29 100%)',
-  cta: 'linear-gradient(135deg, #fb923c 0%, #f97316 100%)',
+  cta: 'linear-gradient(135deg, #F25227 0%, #E8AA29 50%, #E8AA29 100%)',
   subtle: 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
 } as const
 
@@ -128,6 +130,7 @@ export const animations = {
     normal: '200ms',
     slow: '300ms',
     slower: '500ms',
+    serviceFocus: '400ms',
   },
   easing: {
     easeOut: 'ease-out',
@@ -142,6 +145,11 @@ export const animations = {
     slow: '300ms ease-out',
     bounce: '200ms cubic-bezier(0.68, -0.55, 0.265, 1.55)',
     smooth: '200ms cubic-bezier(0.4, 0, 0.2, 1)',
+    serviceFocus: '400ms ease-in-out',
+    serviceCard: '200ms ease-out',
+    serviceOpacity: '300ms ease-out',
+    serviceRoll: '600ms cubic-bezier(0.4, 0, 0.2, 1)',
+    serviceStagger: '100ms',
   },
 } as const
 
@@ -160,5 +168,10 @@ export const interactions = {
   active: {
     scale: 'scale(0.98)',
     scaleSmall: 'scale(0.99)',
+  },
+  servicePositions: {
+    left: 'opacity-70 scale-95 -translate-x-12',
+    center: 'opacity-100 scale-105 translate-x-0',
+    right: 'opacity-70 scale-95 translate-x-12',
   },
 } as const

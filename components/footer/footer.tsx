@@ -49,7 +49,7 @@ export default function Footer() {
         <div className="py-6 border-t border-neutral-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-body-sm text-neutral-400">
-              © {currentYear} Finanxe. All rights reserved.
+              © {currentYear} StryveAhead. All rights reserved.
             </p>
             
             <div className="flex gap-6">

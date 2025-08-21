@@ -1,148 +1,160 @@
 // Content data extracted from components for better maintainability
 
 export const heroContent = {
-  title: "Preserving Your Finances For a Better Future",
-  description: "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.",
+  title: "Scale Your Brand Across Q-Commerce, E-Commerce & Modern Trade",
+  description: "Many upcoming brands struggle to get onboarded and scale in Q-Commerce, E-Commerce, and Modern Trade. What they need is a partner who can provide end-to-end guidance—from strategy to execution. That is exactly what we do.",
   primaryCta: "Get Started",
   secondaryCta: "Learn More",
   trustIndicators: [
-    { number: "500+", label: "Happy Clients" },
-    { number: "$50M+", label: "Assets Managed" },
+    { number: "100+", label: "Brands Supported" },
+    { number: "3X", label: "Average Growth" },
     { number: "15+", label: "Years Experience" }
   ]
 }
 
 export const servicesContent = {
-  title: "Enjoy Our Excellent Service",
-  description: "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules.",
+  title: "Our Services",
+  description: "At StryveAhead Advisors, we work with brands at every stage—whether you're developing a new product or an established name trying to scale on Q-Commerce and E-Commerce. Our role is to simplify the journey, provide end-to-end support, and ensure your brand doesn't just launch but thrives.",
   services: [
     {
-      id: "support-system",
-      title: 'Support System',
-      description: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.',
-      icon: 'support_agent',
-      variant: 'default' as const
+      id: "strategy-growth",
+      title: 'Strategy & Growth',
+      description: 'Define your brand positioning and go-to-market strategy. Identify the right sales channels and optimize product mix, pricing, and promotions.',
+      icon: 'trending_up'
     },
     {
-      id: "financial-management",
-      title: 'Financial Management',
-      description: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.',
-      icon: 'account_balance_wallet',
-      variant: 'featured' as const
+      id: "financial-planning",
+      title: 'Financial Planning & Investor Support',
+      description: 'Build financial models, track key metrics through customized MIS reports, and connect with the right funding partners.',
+      icon: 'account_balance_wallet'
     },
     {
-      id: "safety-compliance",
-      title: 'Safety Compliance',
-      description: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.',
-      icon: 'admin_panel_settings',
-      variant: 'default' as const
+      id: "growth-intelligence",
+      title: 'Growth Intelligence Suite',
+      description: 'Complete visibility and control over Q-Commerce operations with stock tracking, smart pricing, competitor insights, and actionable alerts.',
+      icon: 'analytics'
+    },
+    {
+      id: "ongoing-advisory",
+      title: 'Ongoing Advisory',
+      description: 'Regular reviews to measure progress, on-demand guidance for challenges, and access to industry best practices.',
+      icon: 'support_agent'
     }
   ]
 }
 
 export const aboutContent = {
-  title: "Your Trusted Financial Partner",
-  description: "With over 15 years of experience in financial consulting, we've helped hundreds of clients achieve their financial goals through personalized strategies and expert guidance.",
+  title: "About StryveAhead Advisors",
+  description: "StryveAhead Advisors was built on a simple realisation: many upcoming brands struggle to get onboarded and scale in Q-Commerce, E-Commerce, and Modern Trade. The process is often complex and fragmented. What they need is a partner who can provide end-to-end guidance—from strategy to execution.",
   features: [
-    "Personalized investment strategies tailored to your unique goals",
-    "Comprehensive risk assessment and portfolio diversification",
-    "Transparent fee structure with no hidden charges",
-    "24/7 support and regular portfolio performance reviews"
+    "Specialise in helping brands establish a strong presence across all channels",
+    "End-to-end guidance from strategy to execution and ongoing support",
+    "Services cover sales strategy, financial planning, and investor connections",
+    "Focus on sustainable growth, not just launch success"
   ],
   contactSection: {
-    title: "Ready to Get Started?",
-    phone: "+1 (555) 123-4567",
-    email: "hello@finanxe.com"
+    title: "Ready to Scale Your Brand?",
+    phone: "+91 84549 45500",
+    email: "info@stryveahead.com"
   },
   yearsExperience: "15+"
 }
 
 export const statsContent = {
-  title: "Our History",
+  title: "Our Track Record",
   stats: [
     {
       id: "years-experience",
-      number: '20+',
+      number: '15+',
       label: 'Years Experience'
     },
     {
-      id: "happy-clients",
-      number: '5K',
-      label: 'Happy Clients',
+      id: "brands-supported",
+      number: '100+',
+      label: 'Brands Supported',
       highlighted: true
     },
     {
-      id: "success-rate",
-      number: '99,9%',
-      label: 'Succesfull Project'
+      id: "growth-rate",
+      number: '3X',
+      label: 'Average Growth'
     },
     {
-      id: "expert-staff",
-      number: '520+',
-      label: 'Expert Staff'
+      id: "channels-covered",
+      number: '3',
+      label: 'Sales Channels'
     }
   ]
 }
 
 export const teamContent = {
-  title: "Meet With Our Executive Team",
-  description: "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.",
+  title: "Our Founder",
+  description: "StryveAhead Advisors was founded by Utpal Doshi, a startup investor and corporate venture capital leader with decades of experience. Through his work with corporates and high-growth startups, he identified a major gap: brands often lacked the know-how to enter fast-moving channels like Q-Commerce.",
   members: [
     {
-      id: "robby-jhony",
-      name: 'Robby Jhony',
-      title: 'Founder',
-      imageUrl: 'https://api.builder.io/api/v1/image/assets/TEMP/24cb6b4d70ca9b341bc4165f1bb49f9eb972f999?width=522',
-      featured: true
+      id: "utpal-doshi",
+      name: 'Utpal Doshi',
+      title: 'Founder & CEO',
+      imageUrl: '/images/placeholder-founder.jpg',
+      featured: true,
+      bio: 'Startup investor and corporate venture capital leader with decades of experience. Created StryveAhead to empower ambitious brands with the right strategies, networks, and execution support.'
     },
     {
-      id: "erlina-angel",
-      name: 'Erlina Angel',
-      title: 'CEO',
-      imageUrl: 'https://api.builder.io/api/v1/image/assets/TEMP/eb8841367628afd2f3fd8c458db60c153e0fe02f?width=522'
+      id: "utpal-doshi",
+      name: 'Yogesh',
+      title: 'Founder & CEO',
+      imageUrl: '/images/placeholder-founder.jpg',
+      featured: true,
+      bio: 'Startup investor and corporate venture capital leader with decades of experience. Created StryveAhead to empower ambitious brands with the right strategies, networks, and execution support.'
     },
     {
-      id: "ellisa-maryah",
-      name: 'Ellisa Maryah',
-      title: 'Manager',
-      imageUrl: 'https://api.builder.io/api/v1/image/assets/TEMP/8e13cd570a97a4eb26002d1db489c81c002e8f5d?width=522'
+      id: "utpal-doshi",
+      name: 'Raja',
+      title: 'Founder & CEO',
+      imageUrl: '/images/placeholder-founder.jpg',
+      featured: true,
+      bio: 'Startup investor and corporate venture capital leader with decades of experience. Created StryveAhead to empower ambitious brands with the right strategies, networks, and execution support.'
     },
     {
-      id: "richo-night",
-      name: 'Richo Night',
-      title: 'Consultation',
-      imageUrl: 'https://api.builder.io/api/v1/image/assets/TEMP/4dda93fa7b58bd543ac67d962d35a510871dca0d?width=522'
+      id: "utpal-doshi",
+      name: 'Om',
+      title: 'Founder & CEO',
+      imageUrl: '/images/placeholder-founder.jpg',
+      featured: true,
+      bio: 'Startup investor and corporate venture capital leader with decades of experience. Created StryveAhead to empower ambitious brands with the right strategies, networks, and execution support.'
     }
+
+
   ]
 }
 
 export const testimonialsContent = {
-  title: "What They Say",
-  description: "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.",
+  title: "What Our Clients Say",
+  description: "We believe every great brand journey begins with a conversation. See how we've helped brands scale across Q-Commerce, E-Commerce, and Modern Trade channels.",
   testimonials: [
     {
-      id: "jhon-merrasi",
-      name: "Jhon Merrasi",
-      role: "Our Customers",
+      id: "brand-founder-1",
+      name: "Rajesh Kumar",
+      role: "Founder, Fresh Foods Co.",
       imageUrl: "https://api.builder.io/api/v1/image/assets/TEMP/dea2198a686ce13b162a94d2bce4e24d2b182d34?width=128",
       position: "bottom-left" as const,
-      quote: undefined,
+      quote: "StryveAhead helped us navigate the complex Q-Commerce landscape and achieve 3x growth in just 6 months.",
       featured: undefined
     },
     {
-      id: "angel-mersic",
-      name: "Angel Mersic",
-      role: "Our Customers",
+      id: "ceo-startup",
+      name: "Priya Sharma",
+      role: "CEO, Wellness Brand",
       imageUrl: "https://api.builder.io/api/v1/image/assets/TEMP/cace11a1fa4ff91a8724f7a7e3b4b7ad5891d48f?width=128",
       position: "top-center" as const,
-      quote: undefined,
+      quote: "Their Growth Intelligence Suite transformed our visibility across all channels. We finally have data-driven insights.",
       featured: undefined
     },
     {
-      id: "chena-williams",
-      name: "Chena Williams",
-      role: "Our Customers",
-      quote: "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth.",
+      id: "marketing-director",
+      name: "Amit Patel",
+      role: "Marketing Director, FMCG Brand",
+      quote: "The ongoing advisory support has been invaluable. StryveAhead doesn't just plan - they execute alongside you.",
       imageUrl: "https://api.builder.io/api/v1/image/assets/TEMP/e95d24fa53c04540e72375f95e1d13e966de9189?width=128",
       position: "bottom-right" as const,
       featured: true
@@ -151,8 +163,8 @@ export const testimonialsContent = {
 }
 
 export const ctaContent = {
-  title: "Let's Work Together",
-  description: "Comprehensive financial planning and investment strategies tailored to your goals. Get started with a free consultation today.",
+  title: "Ready to Scale Your Brand?",
+  description: "At StryveAhead Advisors, we believe every great brand journey begins with a conversation. No matter where you are in your journey, we're here to drive your growth across Q-Commerce, E-Commerce, and Modern Trade.",
   placeholder: "Your email address",
   buttonText: "Get Started",
   loadingText: "Sending...",
@@ -160,7 +172,7 @@ export const ctaContent = {
 }
 
 export const footerContent = {
-  description: "Your trusted financial partner for investment planning, wealth management, and securing your financial future. Expert guidance you can count on.",
+  description: "Your trusted partner for scaling brands across Q-Commerce, E-Commerce, and Modern Trade. We specialise in helping brands establish strong presence, optimise operations, and achieve long-term growth.",
   quickLinks: [
     { id: "services", href: '#services', label: 'Services' },
     { id: "about", href: '#about', label: 'About' },
@@ -170,11 +182,11 @@ export const footerContent = {
   ],
   contact: {
     address: {
-      street: "123 Financial District",
-      city: "New York, NY 10004"
+      street: "Mumbai",
+      city: "India"
     },
-    phone: "+1 (555) 123-4567",
-    email: "hello@finanxe.com"
+    phone: "+91 84549 45500",
+    email: "info@stryveahead.com"
   },
   socialLinks: [
     { id: "facebook", href: '#', label: 'Facebook' },

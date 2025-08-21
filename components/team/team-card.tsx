@@ -1,17 +1,19 @@
-import Image from 'next/image'
+
 
 interface TeamCardProps {
   name: string
   title: string
   imageUrl: string
   featured?: boolean
+  bio?: string
 }
 
 export default function TeamCard({ 
   name, 
   title, 
   imageUrl,
-  featured = false
+  featured = false,
+  bio
 }: TeamCardProps) {
   return (
     <div 
@@ -22,13 +24,13 @@ export default function TeamCard({
     >
       {/* Image */}
       <div className="relative w-full max-w-[261px] sm:w-[261px] h-[144px] rounded-2xl overflow-hidden">
-        <Image
-          src={imageUrl}
-          alt={`${name}, ${title}`}
-          fill
-          className="object-cover transition-transform duration-300 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:transform-none"
-          sizes="(max-width: 768px) 100vw, 261px"
-        />
+        <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+          <div className="text-center text-gray-600 px-4">
+            <div className="text-xl font-bold mb-2">{name}</div>
+            <div className="text-base font-semibold mb-2">{title}</div>
+            <div className="text-sm opacity-75">StryveAhead</div>
+          </div>
+        </div>
       </div>
       
       {/* Content */}
@@ -40,11 +42,16 @@ export default function TeamCard({
             </div>
             <div className={`self-stretch text-center font-plus-jakarta text-base font-normal leading-6 ${
               featured 
-                ? 'bg-gradient-to-r from-[#F25227] to-[#E8AA29] bg-clip-text text-transparent' 
+                ? 'bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent' 
                 : 'text-neutral-600'
             }`}>
               {title}
             </div>
+            {bio && (
+              <div className="self-stretch text-center font-plus-jakarta text-sm font-normal leading-5 text-neutral-500 mt-2">
+                {bio}
+              </div>
+            )}
           </div>
         </div>
       </div>

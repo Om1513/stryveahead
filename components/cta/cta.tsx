@@ -5,7 +5,6 @@ import Container from '@/components/container'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Loader2, CheckCircle } from 'lucide-react'
-import { ctaContent } from '@/lib/data/content'
 
 export default function CTA() {
   const [email, setEmail] = useState('')
@@ -48,72 +47,119 @@ export default function CTA() {
   }
 
   return (
-    <section className="py-24 bg-gradient-cta relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="w-full h-full bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] bg-[length:20px_20px]" />
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Background Circular Patterns */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <svg className="w-full h-full max-w-[1440px] max-h-[1440px]" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_d_cta)">
+            <circle cx="720" cy="300" r="720" fill="white"/>
+          </g>
+          <g filter="url(#filter1_d_cta)">
+            <circle cx="720" cy="300" r="597.333" fill="white"/>
+          </g>
+          <g filter="url(#filter2_d_cta)">
+            <circle cx="720" cy="300" r="477.333" fill="white"/>
+          </g>
+          <g filter="url(#filter3_d_cta)">
+            <circle cx="720" cy="300" r="328" fill="white"/>
+          </g>
+          <defs>
+            <filter id="filter0_d_cta" x="-27" y="-441" width="1542" height="1542" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+              <feOffset dx="24" dy="30"/>
+              <feGaussianBlur stdDeviation="25.5"/>
+              <feComposite in2="hardAlpha" operator="out"/>
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_cta"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_cta" result="shape"/>
+            </filter>
+            <filter id="filter1_d_cta" x="95.6667" y="-318.334" width="1296.67" height="1296.67" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+              <feOffset dx="24" dy="30"/>
+              <feGaussianBlur stdDeviation="25.5"/>
+              <feComposite in2="hardAlpha" operator="out"/>
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_cta"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_cta" result="shape"/>
+            </filter>
+            <filter id="filter2_d_cta" x="215.667" y="-198.333" width="1056.67" height="1056.67" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+              <feOffset dx="24" dy="30"/>
+              <feGaussianBlur stdDeviation="25.5"/>
+              <feComposite in2="hardAlpha" operator="out"/>
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_cta"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_cta" result="shape"/>
+            </filter>
+            <filter id="filter3_d_cta" x="365" y="-49" width="758" height="758" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+              <feOffset dx="24" dy="30"/>
+              <feGaussianBlur stdDeviation="25.5"/>
+              <feComposite in2="hardAlpha" operator="out"/>
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_cta"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_cta" result="shape"/>
+            </filter>
+          </defs>
+        </svg>
       </div>
       
       <Container className="relative z-10">
-        <div className="max-w-3xl mx-auto text-center text-white">
-          <h2 className="text-h2 font-bold mb-6 font-poppins">
-            {ctaContent.title}
+        {/* Gradient Box */}
+        <div className="mx-auto max-w-6xl rounded-2xl bg-gradient-cta shadow-[24px_30px_51px_0_rgba(0,0,0,0.10)] p-16 text-center">
+          {/* Heading */}
+          <h2 className="text-[67px] font-bold leading-[80px] text-white font-asap mb-6">
+            Let&apos;s Work Together
           </h2>
           
-          <p className="text-body-lg mb-10 text-orange-50 max-w-xl mx-auto leading-relaxed">
-            {ctaContent.description}
+          {/* Description */}
+          <p className="text-white text-base leading-6 font-normal font-plus-jakarta max-w-[844px] mx-auto mb-12">
+            Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.
           </p>
           
-          <div className="max-w-lg mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <div className="flex-1">
-                  <label htmlFor="email" className="sr-only">
-                    Email address
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder={ctaContent.placeholder}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="h-12 bg-white border-0 text-neutral-900 placeholder:text-neutral-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-500 rounded-lg transition-all duration-200 focus:scale-[1.02] motion-reduce:transition-none motion-reduce:focus:scale-100"
-                    disabled={isLoading}
-                  />
-                </div>
-                
-                <Button
-                  type="submit"
-                  size="lg"
+          {/* Email Form */}
+          <div className="flex items-center justify-center">
+            <form onSubmit={handleSubmit} className="flex">
+              <div className="flex w-[312px] h-16 px-4 items-center bg-white rounded-l-2xl">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                   disabled={isLoading}
-                  className="bg-neutral-900 text-white hover:bg-neutral-800 font-semibold px-8 h-12 min-w-[120px] rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
-                >
-                  {isLoading ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      {ctaContent.loadingText}
-                    </>
-                  ) : (
-                    ctaContent.buttonText
-                  )}
-                </Button>
+                />
               </div>
-              
-              {/* Message Display */}
-              {message && (
-                <div className={`flex items-center justify-center gap-2 text-sm transition-all duration-300 animate-in slide-in-from-bottom-2 ${
-                  message.type === 'success' ? 'text-green-100' : 'text-red-100'
-                }`}>
-                  {message.type === 'success' && <CheckCircle className="h-4 w-4 animate-in zoom-in duration-200" />}
-                  <span>{message.text}</span>
-                </div>
-              )}
+              <Button
+                type="submit"
+                disabled={isLoading}
+                className="h-16 px-10 bg-orange-button hover:bg-orange-button/90 text-white font-asap font-semibold text-base leading-6 rounded-r-2xl rounded-l-none shadow-[0_62px_85px_-22px_rgba(0,0,0,0.30)] transition-colors"
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Loading...
+                  </>
+                ) : (
+                  'Get Started'
+                )}
+              </Button>
             </form>
-            
-            <p className="text-orange-100 text-sm mt-4">
-              {ctaContent.disclaimer}
-            </p>
           </div>
+          
+          {/* Message Display */}
+          {message && (
+            <div className={`flex items-center justify-center gap-2 text-sm mt-6 transition-all duration-300 animate-in slide-in-from-bottom-2 ${
+              message.type === 'success' ? 'text-green-100' : 'text-red-100'
+            }`}>
+              {message.type === 'success' && <CheckCircle className="h-4 w-4 animate-in zoom-in duration-200" />}
+              <span>{message.text}</span>
+            </div>
+          )}
         </div>
       </Container>
     </section>

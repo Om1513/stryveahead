@@ -1,6 +1,5 @@
 import Container from '@/components/container'
 import FeatureItem from './feature-item'
-import Image from 'next/image'
 import { Phone, Mail } from 'lucide-react'
 import { aboutContent } from '@/lib/data/content'
 
@@ -12,13 +11,14 @@ export default function About() {
           {/* Image */}
           <div className="relative order-2 lg:order-1">
             <div className="relative h-[500px] rounded-2xl overflow-hidden">
-              <Image
-                src="/images/about/team-working.png"
-                alt="Professional team collaborating on financial solutions"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                <div className="text-center text-gray-600 px-8">
+                  <div className="text-3xl font-bold mb-4">StryveAhead</div>
+                  <div className="text-xl font-semibold mb-4">Team Collaboration</div>
+                  <div className="text-base mb-2">Brand Scaling Experts</div>
+                  <div className="text-sm opacity-75">Q-Commerce • E-Commerce • Modern Trade</div>
+                </div>
+              </div>
             </div>
             
             {/* Floating Card */}
