@@ -174,11 +174,12 @@ export const ctaContent = {
 export const footerContent = {
   description: "Your trusted partner for scaling brands across Q-Commerce, E-Commerce, and Modern Trade. We specialise in helping brands establish strong presence, optimise operations, and achieve long-term growth.",
   quickLinks: [
+    { id: "home", href: '/', label: 'Home' },
     { id: "services", href: '#services', label: 'Services' },
-    { id: "about", href: '#about', label: 'About' },
+    { id: "about", href: '#about', label: 'About Us' },
     { id: "team", href: '#team', label: 'Team' },
     { id: "testimonials", href: '#testimonials', label: 'Testimonials' },
-    { id: "contact", href: '#contact', label: 'Contact' }
+    { id: "contact", href: '#contact', label: 'Contact Us' }
   ],
   contact: {
     address: {
@@ -192,7 +193,8 @@ export const footerContent = {
     { id: "facebook", href: '#', label: 'Facebook' },
     { id: "twitter", href: '#', label: 'Twitter' },
     { id: "linkedin", href: '#', label: 'LinkedIn' },
-    { id: "instagram", href: '#', label: 'Instagram' }
+    { id: "instagram", href: '#', label: 'Instagram' },
+    { id: "youtube", href: '#', label: 'YouTube' }
   ],
   legalLinks: [
     { id: "privacy", href: "#privacy", label: "Privacy Policy" },

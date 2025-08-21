@@ -76,7 +76,9 @@ module.exports = {
       },
       screens: breakpoints,
       spacing: {
+        '17': '4.25rem',
         '18': '4.5rem',
+        '20': '5rem',
         '88': '22rem',
         '112': '28rem',
         '128': '32rem',
