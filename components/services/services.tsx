@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import Container from '@/components/container'
 import ServiceCard from './service-card'
 import { servicesContent } from '@/lib/data/content'
-import { SupportAgentIcon, AccountBalanceWalletIcon, TrendingUpIcon, AnalyticsIcon } from './service-icons'
+import { SupportAgentIcon, AccountBalanceWalletIcon, TrendingUpIcon, AnalyticsIcon, StorefrontIcon, CampaignIcon, InventoryIcon, GroupsIcon } from './service-icons'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -12,10 +12,18 @@ const getServiceIcon = (iconName: string, color: 'orange' | 'white') => {
   switch (iconName) {
     case 'trending_up':
       return <TrendingUpIcon color={color} />
+    case 'storefront':
+      return <StorefrontIcon color={color} />
+    case 'campaign':
+      return <CampaignIcon color={color} />
+    case 'inventory':
+      return <InventoryIcon color={color} />
     case 'account_balance_wallet':
       return <AccountBalanceWalletIcon color={color} />
     case 'analytics':
       return <AnalyticsIcon color={color} />
+    case 'groups':
+      return <GroupsIcon color={color} />
     case 'support_agent':
       return <SupportAgentIcon color={color} />
     default:
@@ -25,8 +33,9 @@ const getServiceIcon = (iconName: string, color: 'orange' | 'white') => {
 
 export default function Services() {
   // State management for service positions - [leftIndex, centerIndex, rightIndex]
-  const [serviceOrder, setServiceOrder] = useState([0, 1, 2]) // Default: Strategy & Growth, Financial Planning, Growth Intelligence
+  const [serviceOrder, setServiceOrder] = useState([0, 1, 2]) // Default: Sales Strategy, Platform Onboarding, Marketing
   const [isAnimating, setIsAnimating] = useState(false)
+  const totalServices = servicesContent.services.length
 
   // Cycle to next service (circular rolling)
   const handleRollServices = useCallback(() => {
@@ -34,18 +43,18 @@ export default function Services() {
     
     setIsAnimating(true)
     
-    // Roll services: left -> center, center -> right, right -> left
+    // Roll services: move each position to the next service in the array (circular)
     setServiceOrder(prev => [
-      prev[2], // right moves to left
-      prev[0], // left moves to center  
-      prev[1]  // center moves to right
+      (prev[0] + 1) % totalServices, // left moves to next service
+      (prev[1] + 1) % totalServices, // center moves to next service
+      (prev[2] + 1) % totalServices  // right moves to next service
     ])
     
     // Reset animation state after animation completes
     setTimeout(() => {
       setIsAnimating(false)
     }, 600) // Match animation duration
-  }, [isAnimating])
+  }, [isAnimating, totalServices])
 
   // Handle keyboard navigation
   useEffect(() => {

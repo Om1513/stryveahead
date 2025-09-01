@@ -83,3 +83,70 @@ html {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-orange-500;
   }
 }
+
+/* Client logo belt circular animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+.animate-slide {
+  animation: slide 40s linear infinite;
+  will-change: transform;
+  /* Ensure smooth animation */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /* Prevent animation jank */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  /* Additional performance optimizations */
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  /* Ensure smooth scrolling */
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  .animate-slide {
+    animation-duration: 35s;
+  }
+}
+
+.animation-play-state-paused {
+  animation-play-state: paused;
+}
+
+/* Apple taskbar-style hover effects */
+.client-logo-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  cursor: pointer;
+  /* Prevent layout shifts */
+  will-change: transform;
+  /* Smooth transitions */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.client-logo-hover:hover {
+  transform: scale(1.4) translateY(-8px);
+  z-index: 50;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.15));
+}
+
+/* Enhanced hover state for the logo image */
+.client-logo-image {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.client-logo-hover:hover .client-logo-image {
+  filter: grayscale(0) brightness(1.1);
+  transform: scale(1.1);
+}

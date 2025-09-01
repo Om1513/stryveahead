@@ -17,11 +17,11 @@ export default function Logo({ className }: LogoProps) {
       aria-label="StryveAhead - Home"
     >
       <Image
-        src="/images/logo/logo_1.png"
+        src="/images/logo/logo.png"
         alt="StryveAhead Advisors Logo"
         width={400}
         height={120}
-        className="h-24 w-auto"
+        className="h-20 w-auto"
         priority
       />
     </Link>

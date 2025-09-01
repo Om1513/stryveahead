@@ -1,5 +1,5 @@
 import Container from '@/components/container'
-import TeamCard from './team-card'
+import LargeTeamCard from './large-team-card'
 import { teamContent } from '@/lib/data/content'
 
 export default function Team() {
@@ -112,44 +112,15 @@ export default function Team() {
             </div>
           </div>
 
-          {/* Right Grid - Team Cards */}
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center lg:max-w-[640px]">
-            {/* Robby Jhony - Top Left */}
-            <div className="justify-self-start">
-              <TeamCard
-                name={teamContent.members[0].name}
-                title={teamContent.members[0].title}
-                imageUrl={teamContent.members[0].imageUrl}
-                featured={teamContent.members[0].featured || false}
-              />
-            </div>
-            
-            {/* Erlina Angel - Top Right */}
-            <div className="justify-self-end">
-              <TeamCard
-                name={teamContent.members[1].name}
-                title={teamContent.members[1].title}
-                imageUrl={teamContent.members[1].imageUrl}
-              />
-            </div>
-            
-            {/* Ellisa Maryah - Bottom Left */}
-            <div className="justify-self-start">
-              <TeamCard
-                name={teamContent.members[2].name}
-                title={teamContent.members[2].title}
-                imageUrl={teamContent.members[2].imageUrl}
-              />
-            </div>
-            
-            {/* Richo Night - Bottom Right */}
-            <div className="justify-self-end">
-              <TeamCard
-                name={teamContent.members[3].name}
-                title={teamContent.members[3].title}
-                imageUrl={teamContent.members[3].imageUrl}
-              />
-            </div>
+          {/* Right Content - Large Team Card */}
+          <div className="flex-1 flex justify-center lg:max-w-[640px]">
+            <LargeTeamCard
+              name={teamContent.members[0].name}
+              title={teamContent.members[0].title}
+              imageUrl={teamContent.members[0].imageUrl}
+              featured={teamContent.members[0].featured || false}
+              bio={teamContent.members[0].bio}
+            />
           </div>
         </div>
       </Container>

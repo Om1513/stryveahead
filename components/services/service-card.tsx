@@ -87,7 +87,17 @@ export default function ServiceCard({
             'font-asap font-bold leading-8 mb-[14px] transition-colors duration-200 ease-out',
             isCenter ? 'text-[26px] text-white' : 'text-[24px] text-heading'
           )}>
-            {title}
+            {title === 'Strategic Advisory & Retainership' && !isCenter ? (
+              <>
+                Strategic Advisory &<br />Retainership
+              </>
+            ) : title === 'Marketing & Conversion Strategy' && !isCenter ? (
+              <>
+                Marketing & Conversion<br />Strategy
+              </>
+            ) : (
+              title
+            )}
           </h3>
           <p className={cn(
             'font-plus-jakarta font-normal leading-6 transition-colors duration-200 ease-out',

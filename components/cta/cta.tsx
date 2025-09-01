@@ -5,17 +5,42 @@ import Container from '@/components/container'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Loader2, CheckCircle } from 'lucide-react'
+import { ctaContent } from '@/lib/data/content'
+
+interface FormData {
+  fullName: string
+  email: string
+  phone: string
+  company: string
+  designation: string
+  industry: string
+}
 
 export default function CTA() {
-  const [email, setEmail] = useState('')
+  const [formData, setFormData] = useState<FormData>({
+    fullName: '',
+    email: '',
+    phone: '',
+    company: '',
+    designation: '',
+    industry: ''
+  })
   const [isLoading, setIsLoading] = useState(false)
   const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null)
+
+  const handleInputChange = (field: keyof FormData, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }))
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (!email.trim()) {
-      setMessage({ type: 'error', text: 'Please enter your email address' })
+    // Validate required fields
+    const requiredFields = ['fullName', 'email', 'phone', 'company', 'designation', 'industry']
+    const emptyFields = requiredFields.filter(field => !formData[field as keyof FormData].trim())
+    
+    if (emptyFields.length > 0) {
+      setMessage({ type: 'error', text: 'Please fill in all required fields' })
       return
     }
 
@@ -23,22 +48,18 @@ export default function CTA() {
     setMessage(null)
 
     try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: email.trim() }),
+      // For now, just simulate success - integration will be added later
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      
+      setMessage({ type: 'success', text: 'Thank you for your interest! We will get back to you soon.' })
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        company: '',
+        designation: '',
+        industry: ''
       })
-
-      const data = await response.json()
-
-      if (data.ok) {
-        setMessage({ type: 'success', text: data.message })
-        setEmail('')
-      } else {
-        setMessage({ type: 'error', text: data.error })
-      }
     } catch {
       setMessage({ type: 'error', text: 'Something went wrong. Please try again.' })
     } finally {
@@ -113,41 +134,117 @@ export default function CTA() {
         <div className="mx-auto max-w-6xl rounded-2xl bg-gradient-cta shadow-[24px_30px_51px_0_rgba(0,0,0,0.10)] p-16 text-center">
           {/* Heading */}
           <h2 className="text-[67px] font-bold leading-[80px] text-white font-asap mb-6">
-            Let&apos;s Work Together
+            {ctaContent.title}
           </h2>
           
           {/* Description */}
           <p className="text-white text-base leading-6 font-normal font-plus-jakarta max-w-[844px] mx-auto mb-12">
-            Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.
+            {ctaContent.description}
           </p>
           
-          {/* Email Form */}
-          <div className="flex items-center justify-center">
-            <form onSubmit={handleSubmit} className="flex">
-              <div className="flex w-[312px] h-16 px-4 items-center bg-white rounded-l-2xl">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
-                  disabled={isLoading}
-                />
+          {/* Contact Form */}
+          <div className="max-w-2xl mx-auto">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Row 1: Full Name & Email */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-xl p-4">
+                  <Input
+                    type="text"
+                    placeholder="Full Name *"
+                    value={formData.fullName}
+                    onChange={(e) => handleInputChange('fullName', e.target.value)}
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    disabled={isLoading}
+                    required
+                  />
+                </div>
+                <div className="bg-white rounded-xl p-4">
+                  <Input
+                    type="email"
+                    placeholder="Email Address *"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    disabled={isLoading}
+                    required
+                  />
+                </div>
               </div>
-              <Button
-                type="submit"
-                disabled={isLoading}
-                className="h-16 px-10 bg-orange-button hover:bg-orange-button/90 text-white font-asap font-semibold text-base leading-6 rounded-r-2xl rounded-l-none shadow-[0_62px_85px_-22px_rgba(0,0,0,0.30)] transition-colors"
-              >
-                {isLoading ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Loading...
-                  </>
-                ) : (
-                  'Get Started'
-                )}
-              </Button>
+              
+              {/* Row 2: Phone & Company */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-xl p-4">
+                  <Input
+                    type="tel"
+                    placeholder="Phone Number / WhatsApp *"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    disabled={isLoading}
+                    required
+                  />
+                </div>
+                <div className="bg-white rounded-xl p-4">
+                  <Input
+                    type="text"
+                    placeholder="Company Name *"
+                    value={formData.company}
+                    onChange={(e) => handleInputChange('company', e.target.value)}
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    disabled={isLoading}
+                    required
+                  />
+                </div>
+              </div>
+              
+              {/* Row 3: Designation & Industry */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-xl p-4">
+                  <Input
+                    type="text"
+                    placeholder="Designation / Role *"
+                    value={formData.designation}
+                    onChange={(e) => handleInputChange('designation', e.target.value)}
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    disabled={isLoading}
+                    required
+                  />
+                </div>
+                <div className="bg-white rounded-xl p-4">
+                  <Input
+                    type="text"
+                    placeholder="Industry / Sector *"
+                    value={formData.industry}
+                    onChange={(e) => handleInputChange('industry', e.target.value)}
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    disabled={isLoading}
+                    required
+                  />
+                </div>
+              </div>
+              
+              {/* Submit Button */}
+              <div className="flex justify-center pt-4">
+                <Button
+                  type="submit"
+                  disabled={isLoading}
+                  className="h-16 px-12 bg-orange-button hover:bg-orange-button/90 text-white font-asap font-semibold text-base leading-6 rounded-2xl shadow-[0_62px_85px_-22px_rgba(0,0,0,0.30)] transition-colors"
+                >
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    ctaContent.buttonText
+                  )}
+                </Button>
+              </div>
+              
+              {/* Disclaimer */}
+              <p className="text-white/70 text-sm text-center font-plus-jakarta">
+                {ctaContent.disclaimer}
+              </p>
             </form>
           </div>
           

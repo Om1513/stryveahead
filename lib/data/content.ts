@@ -1,63 +1,87 @@
 // Content data extracted from components for better maintainability
 
 export const heroContent = {
-  title: "Scale Your Brand Across Q-Commerce, E-Commerce & Modern Trade",
-  description: "Many upcoming brands struggle to get onboarded and scale in Q-Commerce, E-Commerce, and Modern Trade. What they need is a partner who can provide end-to-end guidance—from strategy to execution. That is exactly what we do.",
+  title: "Accelerate Scale, Unlock Competitive Advantage, Maximise Profitability",
+  description: "At StryveAhead Advisors, we partner with high-growth brands to accelerate scale, unlock competitive advantage, and maximise profitability. In today's dynamic consumer landscape, growth isn't just about going online — it's about engineering the right sales strategy, activating high-impact channels, and leveraging data to drive outcomes.",
   primaryCta: "Get Started",
   secondaryCta: "Learn More",
   trustIndicators: [
     { number: "100+", label: "Brands Supported" },
     { number: "3X", label: "Average Growth" },
-    { number: "15+", label: "Years Experience" }
+    { number: "20+", label: "Years Experience" }
   ]
 }
 
 export const servicesContent = {
   title: "Our Services",
-  description: "At StryveAhead Advisors, we work with brands at every stage—whether you're developing a new product or an established name trying to scale on Q-Commerce and E-Commerce. Our role is to simplify the journey, provide end-to-end support, and ensure your brand doesn't just launch but thrives.",
+  description: "We don't just consult — we execute. Our solutions are designed to integrate strategy, operations, and analytics, ensuring brands win faster and grow smarter.",
   services: [
     {
-      id: "strategy-growth",
-      title: 'Strategy & Growth',
-      description: 'Define your brand positioning and go-to-market strategy. Identify the right sales channels and optimize product mix, pricing, and promotions.',
+      id: "sales-strategy",
+      title: 'Sales Strategy & Channel Architecture',
+      description: 'Engineer your growth roadmap.',
       icon: 'trending_up'
     },
     {
+      id: "platform-onboarding",
+      title: 'Platform Onboarding & Commercial Optimisation',
+      description: 'Accelerate market access.',
+      icon: 'storefront'
+    },
+    {
+      id: "marketing-conversion",
+      title: 'Marketing & Conversion Strategy',
+      description: 'Turn awareness into ROI.',
+      icon: 'campaign'
+    },
+    {
+      id: "operations-supply",
+      title: 'Operations & Supply Chain Excellence',
+      description: 'Scale without disruption.',
+      icon: 'inventory'
+    },
+    {
       id: "financial-planning",
-      title: 'Financial Planning & Investor Support',
-      description: 'Build financial models, track key metrics through customized MIS reports, and connect with the right funding partners.',
+      title: 'Financial Planning & Unit Economics',
+      description: 'Sustainable growth begins with numbers.',
       icon: 'account_balance_wallet'
     },
     {
       id: "growth-intelligence",
-      title: 'Growth Intelligence Suite',
-      description: 'Complete visibility and control over Q-Commerce operations with stock tracking, smart pricing, competitor insights, and actionable alerts.',
+      title: 'Growth Intelligence Suite (Flagship)',
+      description: 'Your growth, quantified.',
       icon: 'analytics'
     },
     {
-      id: "ongoing-advisory",
-      title: 'Ongoing Advisory',
-      description: 'Regular reviews to measure progress, on-demand guidance for challenges, and access to industry best practices.',
+      id: "sales-execution",
+      title: 'Sales Execution & Capability Enablement',
+      description: 'Empower teams to drive outcomes.',
+      icon: 'groups'
+    },
+    {
+      id: "strategic-advisory",
+      title: 'Strategic Advisory & Retainership',
+      description: 'Growth as a partnership, not a project.',
       icon: 'support_agent'
     }
   ]
 }
 
 export const aboutContent = {
-  title: "About StryveAhead Advisors",
-  description: "StryveAhead Advisors was built on a simple realisation: many upcoming brands struggle to get onboarded and scale in Q-Commerce, E-Commerce, and Modern Trade. The process is often complex and fragmented. What they need is a partner who can provide end-to-end guidance—from strategy to execution.",
+  title: "About Us",
+  description: "We provide end-to-end solutions — from strategic planning to execution excellence — empowering brands to outperform competition and achieve sustainable, scalable success.",
   features: [
-    "Specialise in helping brands establish a strong presence across all channels",
-    "End-to-end guidance from strategy to execution and ongoing support",
-    "Services cover sales strategy, financial planning, and investor connections",
-    "Focus on sustainable growth, not just launch success"
+    "Partner with high-growth brands to accelerate scale and unlock competitive advantage",
+    "Engineer the right sales strategy and activate high-impact channels",
+    "Leverage data to drive outcomes and maximise profitability",
+    "Provide end-to-end solutions from strategic planning to execution excellence"
   ],
   contactSection: {
     title: "Ready to Scale Your Brand?",
-    phone: "+91 84549 45500",
+    phone: "+91 99209 52802",
     email: "info@stryveahead.com"
   },
-  yearsExperience: "15+"
+  yearsExperience: "20+"
 }
 
 export const statsContent = {
@@ -65,7 +89,7 @@ export const statsContent = {
   stats: [
     {
       id: "years-experience",
-      number: '15+',
+      number: '20+',
       label: 'Years Experience'
     },
     {
@@ -81,15 +105,15 @@ export const statsContent = {
     },
     {
       id: "channels-covered",
-      number: '3',
-      label: 'Sales Channels'
+      number: '8',
+      label: 'Service Areas'
     }
   ]
 }
 
 export const teamContent = {
   title: "Our Founder",
-  description: "StryveAhead Advisors was founded by Utpal Doshi, a startup investor and corporate venture capital leader with decades of experience. Through his work with corporates and high-growth startups, he identified a major gap: brands often lacked the know-how to enter fast-moving channels like Q-Commerce.",
+  description: "Utpal Doshi, a Chartered Accountant (CA) and an Investor Partner at 100X.VC, brings over two decades of expertise in venture capital, startup acceleration, and corporate growth strategy. He has scaled high-growth D2C brands and FMCG disruptors by driving market-entry strategies, optimising business models, and unlocking investor capital.",
   members: [
     {
       id: "utpal-doshi",
@@ -97,74 +121,14 @@ export const teamContent = {
       title: 'Founder & CEO',
       imageUrl: '/images/placeholder-founder.jpg',
       featured: true,
-      bio: 'Startup investor and corporate venture capital leader with decades of experience. Created StryveAhead to empower ambitious brands with the right strategies, networks, and execution support.'
-    },
-    {
-      id: "utpal-doshi",
-      name: 'Yogesh',
-      title: 'Founder & CEO',
-      imageUrl: '/images/placeholder-founder.jpg',
-      featured: true,
-      bio: 'Startup investor and corporate venture capital leader with decades of experience. Created StryveAhead to empower ambitious brands with the right strategies, networks, and execution support.'
-    },
-    {
-      id: "utpal-doshi",
-      name: 'Raja',
-      title: 'Founder & CEO',
-      imageUrl: '/images/placeholder-founder.jpg',
-      featured: true,
-      bio: 'Startup investor and corporate venture capital leader with decades of experience. Created StryveAhead to empower ambitious brands with the right strategies, networks, and execution support.'
-    },
-    {
-      id: "utpal-doshi",
-      name: 'Om',
-      title: 'Founder & CEO',
-      imageUrl: '/images/placeholder-founder.jpg',
-      featured: true,
-      bio: 'Startup investor and corporate venture capital leader with decades of experience. Created StryveAhead to empower ambitious brands with the right strategies, networks, and execution support.'
-    }
-
-
-  ]
-}
-
-export const testimonialsContent = {
-  title: "What Our Clients Say",
-  description: "We believe every great brand journey begins with a conversation. See how we've helped brands scale across Q-Commerce, E-Commerce, and Modern Trade channels.",
-  testimonials: [
-    {
-      id: "brand-founder-1",
-      name: "Rajesh Kumar",
-      role: "Founder, Fresh Foods Co.",
-      imageUrl: "https://api.builder.io/api/v1/image/assets/TEMP/dea2198a686ce13b162a94d2bce4e24d2b182d34?width=128",
-      position: "bottom-left" as const,
-      quote: "StryveAhead helped us navigate the complex Q-Commerce landscape and achieve 3x growth in just 6 months.",
-      featured: undefined
-    },
-    {
-      id: "ceo-startup",
-      name: "Priya Sharma",
-      role: "CEO, Wellness Brand",
-      imageUrl: "https://api.builder.io/api/v1/image/assets/TEMP/cace11a1fa4ff91a8724f7a7e3b4b7ad5891d48f?width=128",
-      position: "top-center" as const,
-      quote: "Their Growth Intelligence Suite transformed our visibility across all channels. We finally have data-driven insights.",
-      featured: undefined
-    },
-    {
-      id: "marketing-director",
-      name: "Amit Patel",
-      role: "Marketing Director, FMCG Brand",
-      quote: "The ongoing advisory support has been invaluable. StryveAhead doesn't just plan - they execute alongside you.",
-      imageUrl: "https://api.builder.io/api/v1/image/assets/TEMP/e95d24fa53c04540e72375f95e1d13e966de9189?width=128",
-      position: "bottom-right" as const,
-      featured: true
+      bio: 'At StryveAhead Advisors, his vision is clear and uncompromising: "Enable ambitious brands to translate potential into performance and scale with speed, precision, and profitability."'
     }
   ]
 }
 
 export const ctaContent = {
-  title: "Ready to Scale Your Brand?",
-  description: "At StryveAhead Advisors, we believe every great brand journey begins with a conversation. No matter where you are in your journey, we're here to drive your growth across Q-Commerce, E-Commerce, and Modern Trade.",
+  title: "Contact Us",
+  description: "At StryveAhead Advisors, we believe that scaling brands is a science — and we make it happen. Whether you're launching your first product or expanding into new categories, we partner with you to engineer growth.",
   placeholder: "Your email address",
   buttonText: "Get Started",
   loadingText: "Sending...",
@@ -172,7 +136,6 @@ export const ctaContent = {
 }
 
 export const footerContent = {
-  description: "Your trusted partner for scaling brands across Q-Commerce, E-Commerce, and Modern Trade. We specialise in helping brands establish strong presence, optimise operations, and achieve long-term growth.",
   quickLinks: [
     { id: "home", href: '/', label: 'Home' },
     { id: "services", href: '#services', label: 'Services' },
@@ -186,7 +149,7 @@ export const footerContent = {
       street: "Mumbai",
       city: "India"
     },
-    phone: "+91 84549 45500",
+    phone: "+91 99209 52802",
     email: "info@stryveahead.com"
   },
   socialLinks: [
