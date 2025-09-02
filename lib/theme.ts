@@ -34,34 +34,52 @@ export const colors = {
 
 export const spacing = {
   section: {
-    sm: '4rem',
-    md: '5rem',
-    lg: '6rem',
-    xl: '8rem',
+    xs: '2rem',
+    sm: '3rem',
+    md: '4rem',
+    lg: '5rem',
+    xl: '6rem',
+    '2xl': '8rem',
   },
   container: {
     padding: {
       mobile: '1rem',
       tablet: '1.5rem',
       desktop: '2rem',
+      wide: '2.5rem',
     },
     maxWidth: '80rem', // 1280px
+  },
+  // Responsive spacing utilities
+  responsive: {
+    xs: 'clamp(1rem, 2vw, 1.5rem)',
+    sm: 'clamp(1.5rem, 3vw, 2rem)',
+    md: 'clamp(2rem, 4vw, 3rem)',
+    lg: 'clamp(3rem, 5vw, 4rem)',
+    xl: 'clamp(4rem, 6vw, 6rem)',
   },
 } as const
 
 export const typography = {
   fontSize: {
-    'hero': ['3.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
-    'h1': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
-    'h2': ['2.25rem', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
-    'h3': ['1.875rem', { lineHeight: '1.4', letterSpacing: '-0.01em' }],
-    'h4': ['1.5rem', { lineHeight: '1.4' }],
-    'h5': ['1.25rem', { lineHeight: '1.5' }],
-    'h6': ['1.125rem', { lineHeight: '1.5' }],
-    'body-lg': ['1.125rem', { lineHeight: '1.7' }],
-    'body': ['1rem', { lineHeight: '1.6' }],
-    'body-sm': ['0.875rem', { lineHeight: '1.6' }],
-    'caption': ['0.75rem', { lineHeight: '1.5' }],
+    // Responsive hero text
+    'hero': ['clamp(2.5rem, 5vw, 4.5rem)', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+    // Responsive headings
+    'h1': ['clamp(2rem, 4vw, 3rem)', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+    'h2': ['clamp(1.75rem, 3.5vw, 2.25rem)', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
+    'h3': ['clamp(1.5rem, 3vw, 1.875rem)', { lineHeight: '1.4', letterSpacing: '-0.01em' }],
+    'h4': ['clamp(1.25rem, 2.5vw, 1.5rem)', { lineHeight: '1.4' }],
+    'h5': ['clamp(1.125rem, 2vw, 1.25rem)', { lineHeight: '1.5' }],
+    'h6': ['clamp(1rem, 1.5vw, 1.125rem)', { lineHeight: '1.5' }],
+    // Responsive body text
+    'body-lg': ['clamp(1rem, 1.5vw, 1.125rem)', { lineHeight: '1.7' }],
+    'body': ['clamp(0.875rem, 1.25vw, 1rem)', { lineHeight: '1.6' }],
+    'body-sm': ['clamp(0.75rem, 1vw, 0.875rem)', { lineHeight: '1.6' }],
+    'caption': ['clamp(0.625rem, 0.875vw, 0.75rem)', { lineHeight: '1.5' }],
+    // Mobile-specific sizes
+    'hero-mobile': ['2.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+    'h1-mobile': ['2rem', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+    'h2-mobile': ['1.75rem', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
   },
   fontWeight: {
     light: '300',
@@ -94,10 +112,16 @@ export const shadows = {
 
 export const breakpoints = {
   xs: '360px',
-  sm: '768px',
-  md: '1024px',
-  lg: '1280px',
-  xl: '1440px',
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+  '2xl': '1536px',
+  // Custom breakpoints for better responsive design
+  mobile: '480px',
+  tablet: '768px',
+  desktop: '1024px',
+  wide: '1440px',
 } as const
 
 export const gradients = {

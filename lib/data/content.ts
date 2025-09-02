@@ -140,8 +140,8 @@ export const footerContent = {
     { id: "home", href: '/', label: 'Home' },
     { id: "services", href: '#services', label: 'Services' },
     { id: "about", href: '#about', label: 'About Us' },
+    { id: "portfolio", href: '#portfolio', label: 'Portfolio' },
     { id: "team", href: '#team', label: 'Team' },
-    { id: "testimonials", href: '#testimonials', label: 'Testimonials' },
     { id: "contact", href: '#contact', label: 'Contact Us' }
   ],
   contact: {
@@ -152,13 +152,6 @@ export const footerContent = {
     phone: "+91 99209 52802",
     email: "info@stryveahead.com"
   },
-  socialLinks: [
-    { id: "facebook", href: '#', label: 'Facebook' },
-    { id: "twitter", href: '#', label: 'Twitter' },
-    { id: "linkedin", href: '#', label: 'LinkedIn' },
-    { id: "instagram", href: '#', label: 'Instagram' },
-    { id: "youtube", href: '#', label: 'YouTube' }
-  ],
   legalLinks: [
     { id: "privacy", href: "#privacy", label: "Privacy Policy" },
     { id: "terms", href: "#terms", label: "Terms of Service" },

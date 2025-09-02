@@ -1,12 +1,14 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import { motion } from 'framer-motion'
 import Container from '@/components/container'
 import ServiceCard from './service-card'
 import { servicesContent } from '@/lib/data/content'
 import { SupportAgentIcon, AccountBalanceWalletIcon, TrendingUpIcon, AnalyticsIcon, StorefrontIcon, CampaignIcon, InventoryIcon, GroupsIcon } from './service-icons'
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { fadeInUp, staggerContainer, staggerItem } from '@/lib/animations/variants'
 
 const getServiceIcon = (iconName: string, color: 'orange' | 'white') => {
   switch (iconName) {
@@ -92,24 +94,36 @@ export default function Services() {
       <Container>
         <div className="relative">
           {/* Header Section */}
-          <div className="grid lg:grid-cols-2 gap-12 mb-24">
+          <motion.div 
+            className="grid lg:grid-cols-2 gap-12 mb-24"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             {/* Title */}
-            <div className="lg:max-w-[545px]">
+            <motion.div className="lg:max-w-[545px]" variants={staggerItem}>
               <h2 className="font-asap text-[67px] font-bold leading-[80px] text-heading">
                 {servicesContent.title}
               </h2>
-            </div>
+            </motion.div>
             
             {/* Description */}
-            <div className="lg:max-w-[661px] lg:ml-auto">
+            <motion.div className="lg:max-w-[661px] lg:ml-auto" variants={staggerItem}>
               <p className="font-plus-jakarta text-base font-normal leading-6 text-paragraph mt-8">
                 {servicesContent.description}
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Services Grid */}
-          <div className="relative">
+          <motion.div 
+            className="relative"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <div className="grid lg:grid-cols-3 gap-0 max-w-[1342px] mx-auto">
               {/* Render services in their current positions */}
               {serviceOrder.map((serviceIndex, position) => {
@@ -153,7 +167,7 @@ export default function Services() {
                 Use arrow keys or button to roll services
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>

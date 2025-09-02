@@ -25,6 +25,9 @@ module.exports = {
         ...typography.fontWeight,
       },
       fontFamily: {
+        'sf-pro': ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        'sf-compact': ['SF Compact Display', 'SF Compact Text', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        'ny': ['New York', 'Times New Roman', 'serif'],
         inter: ['var(--font-inter)', 'sans-serif'],
         poppins: ['var(--font-poppins)', 'sans-serif'],
         asap: ['var(--font-asap)', 'sans-serif'],
@@ -74,7 +77,15 @@ module.exports = {
         // Theme token border radius
         ...borderRadius,
       },
-      screens: breakpoints,
+      screens: {
+        ...breakpoints,
+        // Override container screens for better responsive design
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+      },
       spacing: {
         '17': '4.25rem',
         '18': '4.5rem',
@@ -85,6 +96,12 @@ module.exports = {
         // Header specific spacing
         'header-mobile': header.height.mobile,
         'header-desktop': header.height.desktop,
+        // Responsive spacing from theme
+        'responsive-xs': spacing.responsive.xs,
+        'responsive-sm': spacing.responsive.sm,
+        'responsive-md': spacing.responsive.md,
+        'responsive-lg': spacing.responsive.lg,
+        'responsive-xl': spacing.responsive.xl,
       },
       boxShadow: shadows,
       backgroundImage: {

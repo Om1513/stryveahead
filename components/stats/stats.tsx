@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import Container from '@/components/container'
 import Stat from './stat'
 import { statsContent } from '@/lib/data/content'
+import { staggerContainer } from '@/lib/animations/variants'
 
 export default function Stats() {
   const [hoveredCardId, setHoveredCardId] = useState<string | null>(null)
@@ -33,15 +35,84 @@ export default function Stats() {
           xmlns="http://www.w3.org/2000/svg"
           className="absolute scale-75 md:scale-100"
         >
-          <circle cx="473.5" cy="150.5" r="193.5" stroke="white" strokeWidth="4" />
-          <circle cx="473.5" cy="150.5" r="279.5" stroke="white" strokeWidth="4" />
-          <circle cx="473.5" cy="150.5" r="363.5" stroke="white" strokeWidth="4" />
-          <circle cx="473.5" cy="150.5" r="471.5" stroke="white" strokeWidth="4" />
+          <motion.circle 
+            cx="473.5" 
+            cy="150.5" 
+            r="193.5" 
+            stroke="white" 
+            strokeWidth="4"
+            animate={{
+              scale: [1, 1.05, 1],
+              opacity: [0.6, 0.8, 0.6],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.circle 
+            cx="473.5" 
+            cy="150.5" 
+            r="279.5" 
+            stroke="white" 
+            strokeWidth="4"
+            animate={{
+              scale: [1, 1.03, 1],
+              opacity: [0.4, 0.6, 0.4],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
+          <motion.circle 
+            cx="473.5" 
+            cy="150.5" 
+            r="363.5" 
+            stroke="white" 
+            strokeWidth="4"
+            animate={{
+              scale: [1, 1.02, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 2,
+            }}
+          />
+          <motion.circle 
+            cx="473.5" 
+            cy="150.5" 
+            r="471.5" 
+            stroke="white" 
+            strokeWidth="4"
+            animate={{
+              scale: [1, 1.01, 1],
+              opacity: [0.2, 0.4, 0.2],
+            }}
+            transition={{
+              duration: 7,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 3,
+            }}
+          />
         </svg>
       </div>
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <motion.div 
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {statsContent.stats.map((stat) => {
             // Determine if this card should be highlighted
             const isHighlighted = hoveredCardId 
@@ -58,7 +129,7 @@ export default function Stats() {
               />
             )
           })}
-        </div>
+        </motion.div>
       </Container>
     </section>
   )

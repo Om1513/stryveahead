@@ -10,7 +10,7 @@ export default function Portfolio() {
             Our Portfolio
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover the brands we've helped scale across Q-Commerce, E-Commerce, and Modern Trade. 
+            Discover the brands we&apos;ve helped scale across Q-Commerce, E-Commerce, and Modern Trade. 
             Our success stories speak for themselves.
           </p>
         </div>

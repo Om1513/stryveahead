@@ -1,7 +1,11 @@
+'use client'
+
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import type { NavigationItem } from '@/types/navigation'
 import type { MouseEventHandler } from 'react'
+import { appleHover } from '@/lib/animations/variants'
 
 interface NavLinkProps {
   item: NavigationItem
@@ -26,27 +30,35 @@ export default function NavLink({
 
   if (item.isExternal) {
     return (
-      <a
+      <motion.a
         href={item.href}
         target="_blank"
         rel="noopener noreferrer"
         className={baseClasses}
         onClick={onClick}
+        variants={appleHover}
+        initial="rest"
+        whileHover="hover"
+        whileTap="rest"
       >
         <span>{item.label}</span>
-      </a>
+      </motion.a>
     )
   }
 
   const linkProps = onClick ? { onClick } : {}
 
   return (
-    <Link
-      href={item.href}
-      className={baseClasses}
-      {...linkProps}
-    >
-      <span>{item.label}</span>
+    <Link href={item.href} {...linkProps}>
+      <motion.span
+        className={baseClasses}
+        variants={appleHover}
+        initial="rest"
+        whileHover="hover"
+        whileTap="rest"
+      >
+        <span>{item.label}</span>
+      </motion.span>
     </Link>
   )
 }

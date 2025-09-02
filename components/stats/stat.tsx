@@ -1,3 +1,8 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { staggerItem } from '@/lib/animations/variants'
+
 interface StatProps {
   number: string
   label: string
@@ -7,7 +12,7 @@ interface StatProps {
 
 export default function Stat({ number, label, highlighted = false, onMouseEnter }: StatProps) {
   return (
-    <div 
+    <motion.div 
       className={`relative w-[293px] h-[152px] rounded-2xl shadow-[24px_30px_51px_0_rgba(0,0,0,0.10)] mx-auto transition-all duration-200 ease-out motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 ${
         highlighted 
           ? 'bg-gradient-hero shadow-[24px_30px_51px_0_rgba(0,0,0,0.15)]' 
@@ -17,6 +22,10 @@ export default function Stat({ number, label, highlighted = false, onMouseEnter 
       role="article"
       aria-label={`Statistic: ${number} ${label}`}
       onMouseEnter={onMouseEnter}
+      variants={staggerItem}
+      whileHover="hover"
+      initial="rest"
+      animate="rest"
     >
       {/* Decorative Background Elements for Highlighted Card */}
       {highlighted && (
@@ -53,6 +62,6 @@ export default function Stat({ number, label, highlighted = false, onMouseEnter 
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

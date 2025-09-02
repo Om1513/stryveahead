@@ -11,7 +11,6 @@ interface TeamCardProps {
 export default function TeamCard({ 
   name, 
   title, 
-  imageUrl,
   featured = false,
   bio
 }: TeamCardProps) {

@@ -9,7 +9,6 @@ interface LargeTeamCardProps {
 export default function LargeTeamCard({ 
   name, 
   title, 
-  imageUrl,
   featured = false,
   bio
 }: LargeTeamCardProps) {

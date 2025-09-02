@@ -1,11 +1,13 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import Container from '@/components/container'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Loader2, CheckCircle } from 'lucide-react'
 import { ctaContent } from '@/lib/data/content'
+import { fadeInUp, staggerItem } from '@/lib/animations/variants'
 
 interface FormData {
   fullName: string
@@ -73,16 +75,75 @@ export default function CTA() {
       <div className="absolute inset-0 flex items-center justify-center">
         <svg className="w-full h-full max-w-[1440px] max-h-[1440px]" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_d_cta)">
-            <circle cx="720" cy="300" r="720" fill="white"/>
+            <motion.circle 
+              cx="720" 
+              cy="300" 
+              r="720" 
+              fill="white"
+              animate={{
+                scale: [1, 1.02, 1],
+                opacity: [0.8, 1, 0.8],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
           </g>
           <g filter="url(#filter1_d_cta)">
-            <circle cx="720" cy="300" r="597.333" fill="white"/>
+            <motion.circle 
+              cx="720" 
+              cy="300" 
+              r="597.333" 
+              fill="white"
+              animate={{
+                scale: [1, 1.015, 1],
+                opacity: [0.6, 0.8, 0.6],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
+            />
           </g>
           <g filter="url(#filter2_d_cta)">
-            <circle cx="720" cy="300" r="477.333" fill="white"/>
+            <motion.circle 
+              cx="720" 
+              cy="300" 
+              r="477.333" 
+              fill="white"
+              animate={{
+                scale: [1, 1.01, 1],
+                opacity: [0.4, 0.6, 0.4],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2,
+              }}
+            />
           </g>
           <g filter="url(#filter3_d_cta)">
-            <circle cx="720" cy="300" r="328" fill="white"/>
+            <motion.circle 
+              cx="720" 
+              cy="300" 
+              r="328" 
+              fill="white"
+              animate={{
+                scale: [1, 1.005, 1],
+                opacity: [0.2, 0.4, 0.2],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 3,
+              }}
+            />
           </g>
           <defs>
             <filter id="filter0_d_cta" x="-27" y="-441" width="1542" height="1542" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
@@ -131,16 +192,28 @@ export default function CTA() {
       
       <Container className="relative z-10">
         {/* Gradient Box */}
-        <div className="mx-auto max-w-6xl rounded-2xl bg-gradient-cta shadow-[24px_30px_51px_0_rgba(0,0,0,0.10)] p-16 text-center">
+        <motion.div 
+          className="mx-auto max-w-6xl rounded-2xl bg-gradient-cta shadow-[24px_30px_51px_0_rgba(0,0,0,0.10)] p-16 text-center"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {/* Heading */}
-          <h2 className="text-[67px] font-bold leading-[80px] text-white font-asap mb-6">
+          <motion.h2 
+            className="text-[67px] font-bold leading-[80px] text-white font-asap mb-6"
+            variants={staggerItem}
+          >
             {ctaContent.title}
-          </h2>
+          </motion.h2>
           
           {/* Description */}
-          <p className="text-white text-base leading-6 font-normal font-plus-jakarta max-w-[844px] mx-auto mb-12">
+          <motion.p 
+            className="text-white text-base leading-6 font-normal font-plus-jakarta max-w-[844px] mx-auto mb-12"
+            variants={staggerItem}
+          >
             {ctaContent.description}
-          </p>
+          </motion.p>
           
           {/* Contact Form */}
           <div className="max-w-2xl mx-auto">
@@ -257,7 +330,7 @@ export default function CTA() {
               <span>{message.text}</span>
             </div>
           )}
-        </div>
+        </motion.div>
       </Container>
     </section>
   )

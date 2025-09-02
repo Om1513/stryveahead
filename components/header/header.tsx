@@ -26,7 +26,7 @@ export default function Header({ className, currentPath }: HeaderProps) {
         <Logo />
 
         {/* Desktop Navigation */}
-        <Navigation currentPath={currentPath} />
+        <Navigation />
 
         {/* Mobile Menu */}
         <MobileMenu
