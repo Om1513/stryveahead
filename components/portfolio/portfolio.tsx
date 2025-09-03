@@ -9,10 +9,6 @@ export default function Portfolio() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Our Portfolio
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover the brands we&apos;ve helped scale across Q-Commerce, E-Commerce, and Modern Trade. 
-            Our success stories speak for themselves.
-          </p>
         </div>
         
         <div className="relative">

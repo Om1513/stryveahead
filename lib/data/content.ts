@@ -113,15 +113,15 @@ export const statsContent = {
 
 export const teamContent = {
   title: "Our Founder",
-  description: "Utpal Doshi, a Chartered Accountant (CA) and an Investor Partner at 100X.VC, brings over two decades of expertise in venture capital, startup acceleration, and corporate growth strategy. He has scaled high-growth D2C brands and FMCG disruptors by driving market-entry strategies, optimising business models, and unlocking investor capital.",
+  description: "Utpal Doshi founded Ignition Capital Advisors with a bold mission to bridge the gap between entrepreneurs and investors, helping India's next generation of high-growth startups.\n\nAs a Chartered Accountant (CA) and Investor Partner at 100X.VC, he brings over two decades of expertise in venture capital, startup acceleration, and strategic advisory services.\n\nHe goes beyond capital to deliver curated insights, industry expertise, and deep strategic support. His focus spans startup investments, M&A advisory, and IPO readiness — building enduring partnerships rooted in transparency, trust, and transformative outcomes.",
   members: [
     {
       id: "utpal-doshi",
       name: 'Utpal Doshi',
       title: 'Founder & CEO',
-      imageUrl: '/images/placeholder-founder.jpg',
+      imageUrl: '/images/team/Utpal.jpg',
       featured: true,
-      bio: 'At StryveAhead Advisors, his vision is clear and uncompromising: "Enable ambitious brands to translate potential into performance and scale with speed, precision, and profitability."'
+      bio: 'At StryveAhead Advisors, his vision is clear and uncompromising:\n\n\n"Enable ambitious brands to translate potential into performance and scale with speed, precision, and profitability."'
     }
   ]
 }

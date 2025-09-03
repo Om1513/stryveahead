@@ -7,7 +7,8 @@ import FocusTrap from 'focus-trap-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import NavLink from './nav-link'
-import { navigationItems } from '@/lib/navigation'
+import { navigationItems, loginItem } from '@/lib/navigation'
+import Link from 'next/link'
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -132,6 +133,15 @@ export default function MobileMenu({
                   className="w-full justify-start text-base py-3 px-4 after:hidden hover:bg-neutral-50 rounded-md transition-all duration-200 hover:translate-x-1 motion-reduce:transition-none motion-reduce:hover:translate-x-0"
                 />
               ))}
+              
+              {/* Login Link */}
+              <Link
+                href={loginItem.href}
+                onClick={handleLinkClick}
+                className="w-full justify-start text-base py-3 px-4 hover:bg-neutral-50 rounded-md transition-all duration-200 hover:translate-x-1 motion-reduce:transition-none motion-reduce:hover:translate-x-0 bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-medium mt-4"
+              >
+                {loginItem.label}
+              </Link>
             </div>
           </nav>
 

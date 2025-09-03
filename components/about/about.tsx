@@ -21,20 +21,11 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
-              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                <motion.div 
-                  className="text-center text-gray-600 px-8"
-                  variants={staggerContainer}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                >
-                  <motion.div className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4" variants={staggerItem}>StryveAhead</motion.div>
-                  <motion.div className="text-lg sm:text-xl font-semibold mb-2 sm:mb-4" variants={staggerItem}>Team Collaboration</motion.div>
-                  <motion.div className="text-sm sm:text-base mb-1 sm:mb-2" variants={staggerItem}>Brand Scaling Experts</motion.div>
-                  <motion.div className="text-xs sm:text-sm opacity-75" variants={staggerItem}>Q-Commerce • E-Commerce • Modern Trade</motion.div>
-                </motion.div>
-              </div>
+              <img 
+                src="/images/about/teamwork.jpg" 
+                alt="StryveAhead Team Collaboration"
+                className="w-full h-full object-cover"
+              />
             </div>
             
             {/* Floating Card */}

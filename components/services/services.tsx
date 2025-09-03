@@ -1,86 +1,41 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import Container from '@/components/container'
 import ServiceCard from './service-card'
 import { servicesContent } from '@/lib/data/content'
 import { SupportAgentIcon, AccountBalanceWalletIcon, TrendingUpIcon, AnalyticsIcon, StorefrontIcon, CampaignIcon, InventoryIcon, GroupsIcon } from './service-icons'
-import { ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/animations/variants'
 
-const getServiceIcon = (iconName: string, color: 'orange' | 'white') => {
+const getServiceIcon = (iconName: string) => {
   switch (iconName) {
     case 'trending_up':
-      return <TrendingUpIcon color={color} />
+      return <TrendingUpIcon color="orange" />
     case 'storefront':
-      return <StorefrontIcon color={color} />
+      return <StorefrontIcon color="orange" />
     case 'campaign':
-      return <CampaignIcon color={color} />
+      return <CampaignIcon color="orange" />
     case 'inventory':
-      return <InventoryIcon color={color} />
+      return <InventoryIcon color="orange" />
     case 'account_balance_wallet':
-      return <AccountBalanceWalletIcon color={color} />
+      return <AccountBalanceWalletIcon color="orange" />
     case 'analytics':
-      return <AnalyticsIcon color={color} />
+      return <AnalyticsIcon color="orange" />
     case 'groups':
-      return <GroupsIcon color={color} />
+      return <GroupsIcon color="orange" />
     case 'support_agent':
-      return <SupportAgentIcon color={color} />
+      return <SupportAgentIcon color="orange" />
     default:
       return null
   }
 }
 
 export default function Services() {
-  // State management for service positions - [leftIndex, centerIndex, rightIndex]
-  const [serviceOrder, setServiceOrder] = useState([0, 1, 2]) // Default: Sales Strategy, Platform Onboarding, Marketing
-  const [isAnimating, setIsAnimating] = useState(false)
-  const totalServices = servicesContent.services.length
-
-  // Cycle to next service (circular rolling)
-  const handleRollServices = useCallback(() => {
-    if (isAnimating) return // Prevent multiple clicks during animation
-    
-    setIsAnimating(true)
-    
-    // Roll services: move each position to the next service in the array (circular)
-    setServiceOrder(prev => [
-      (prev[0] + 1) % totalServices, // left moves to next service
-      (prev[1] + 1) % totalServices, // center moves to next service
-      (prev[2] + 1) % totalServices  // right moves to next service
-    ])
-    
-    // Reset animation state after animation completes
-    setTimeout(() => {
-      setIsAnimating(false)
-    }, 600) // Match animation duration
-  }, [isAnimating, totalServices])
-
-  // Handle keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.target === document.body || (e.target as HTMLElement).closest('[data-services-navigation]')) {
-        switch (e.key) {
-          case 'ArrowLeft':
-          case 'ArrowRight':
-            e.preventDefault()
-            handleRollServices()
-            break
-        }
-      }
-    }
-
-    document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [isAnimating, handleRollServices])
 
   return (
     <section 
-      className="relative py-24 bg-white overflow-hidden" 
-      data-services-navigation
-      aria-label="Services section with interactive navigation"
+      className="relative py-24 bg-white overflow-hidden"
+      aria-label="Services section"
     >
       {/* Background decorative elements */}
       <div className="absolute -left-[105px] top-[322px] w-[496px] h-[576px] rounded-[80px] bg-paragraph opacity-5" />
@@ -116,7 +71,7 @@ export default function Services() {
             </motion.div>
           </motion.div>
 
-          {/* Services Grid */}
+          {/* Services Grid - 4x2 Layout */}
           <motion.div 
             className="relative"
             variants={fadeInUp}
@@ -124,48 +79,15 @@ export default function Services() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="grid lg:grid-cols-3 gap-0 max-w-[1342px] mx-auto">
-              {/* Render services in their current positions */}
-              {serviceOrder.map((serviceIndex, position) => {
-                const service = servicesContent.services[serviceIndex]
-                const positions = ['left', 'center', 'right'] as const
-                const currentPosition = positions[position]
-                
-                return (
-                  <ServiceCard
-                    key={`${service.id}-${position}`}
-                    title={service.title}
-                    description={service.description}
-                    icon={getServiceIcon(service.icon, currentPosition === 'center' ? 'white' : 'orange')}
-                    position={currentPosition}
-                    isAnimating={isAnimating}
-                  />
-                )
-              })}
-            </div>
-
-            {/* Roll Services Button */}
-            <div className="flex justify-center mt-16">
-              <Button
-                onClick={handleRollServices}
-                disabled={isAnimating}
-                className={`bg-gradient-hero text-white font-plus-jakarta font-semibold px-6 py-3 rounded-full transition-all duration-200 ease-out shadow-lg focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 flex items-center gap-2 ${
-                  isAnimating 
-                    ? 'opacity-70 cursor-not-allowed' 
-                    : 'hover:scale-110 hover:shadow-xl'
-                }`}
-                aria-label={`Roll services${isAnimating ? ' - animating' : ''}`}
-              >
-                {isAnimating ? 'Rolling...' : 'Next Service'}
-                <ArrowRight className="w-5 h-5" />
-              </Button>
-            </div>
-
-            {/* Keyboard Navigation Instructions */}
-            <div className="flex justify-center mt-6">
-              <p className="text-sm text-paragraph/70 font-plus-jakarta">
-                Use arrow keys or button to roll services
-              </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              {servicesContent.services.map((service) => (
+                <ServiceCard
+                  key={service.id}
+                  title={service.title}
+                  description={service.description}
+                  icon={getServiceIcon(service.icon)}
+                />
+              ))}
             </div>
           </motion.div>
         </div>

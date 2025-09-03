@@ -90,19 +90,11 @@ export default function Hero() {
             animate="visible"
           >
             <div className="absolute inset-0 rounded-2xl shadow-[24px_30px_51px_0px_rgba(0,0,0,0.1)] overflow-hidden">
-              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                <motion.div 
-                  className="text-center text-gray-600 px-8"
-                  variants={staggerContainer}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  <motion.div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4" variants={staggerItem}>StryveAhead</motion.div>
-                  <motion.div className="text-lg sm:text-xl lg:text-2xl font-semibold mb-4 sm:mb-6" variants={staggerItem}>Growth Intelligence Suite</motion.div>
-                  <motion.div className="text-sm sm:text-base lg:text-lg" variants={staggerItem}>Dashboard Preview</motion.div>
-                  <motion.div className="text-xs sm:text-sm lg:text-base mt-2 sm:mt-4 opacity-75" variants={staggerItem}>Real-time Q-Commerce Analytics</motion.div>
-                </motion.div>
-              </div>
+              <img 
+                src="/images/hero/home.jpg" 
+                alt="StryveAhead Growth Intelligence Suite"
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
         </div>

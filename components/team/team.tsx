@@ -314,7 +314,7 @@ export default function Team() {
               <h2 className="text-[67px] font-bold leading-[80px] text-neutral-900 mb-8 font-asap">
                 {teamContent.title}
               </h2>
-              <p className="text-base font-normal leading-6 text-neutral-600 font-plus-jakarta">
+              <p className="text-base font-normal leading-6 text-neutral-600 font-plus-jakarta whitespace-pre-line">
                 {teamContent.description}
               </p>
             </div>

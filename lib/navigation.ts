@@ -8,3 +8,8 @@ export const navigationItems: NavigationItem[] = [
   { label: 'Team', href: '#team' },
   { label: 'Contact Us', href: '#contact' },
 ]
+
+export const loginItem: NavigationItem = {
+  label: 'Login',
+  href: '/login'
+}

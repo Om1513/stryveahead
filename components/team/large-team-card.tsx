@@ -9,6 +9,7 @@ interface LargeTeamCardProps {
 export default function LargeTeamCard({ 
   name, 
   title, 
+  imageUrl,
   featured = false,
   bio
 }: LargeTeamCardProps) {
@@ -21,13 +22,11 @@ export default function LargeTeamCard({
     >
       {/* Image */}
       <div className="relative w-full max-w-[400px] h-[300px] rounded-2xl overflow-hidden">
-        <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-          <div className="text-center text-gray-600 px-4">
-            <div className="text-3xl font-bold mb-4">{name}</div>
-            <div className="text-xl font-semibold mb-4">{title}</div>
-            <div className="text-lg opacity-75">StryveAhead</div>
-          </div>
-        </div>
+        <img 
+          src={imageUrl}
+          alt={`${name} - ${title}`}
+          className="w-full h-full object-cover"
+        />
       </div>
       
       {/* Content */}
