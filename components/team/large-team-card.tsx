@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface LargeTeamCardProps {
   name: string
   title: string
@@ -22,10 +24,12 @@ export default function LargeTeamCard({
     >
       {/* Image */}
       <div className="relative w-full max-w-[400px] h-[300px] rounded-2xl overflow-hidden">
-        <img 
+        <Image 
           src={imageUrl}
           alt={`${name} - ${title}`}
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 400px"
+          className="object-cover"
         />
       </div>
       

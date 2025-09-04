@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import Container from '@/components/container'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { heroContent } from '@/lib/data/content'
 import { staggerContainer, staggerItem, slideInRight, floating } from '@/lib/animations/variants'
 
@@ -90,10 +91,13 @@ export default function Hero() {
             animate="visible"
           >
             <div className="absolute inset-0 rounded-2xl shadow-[24px_30px_51px_0px_rgba(0,0,0,0.1)] overflow-hidden">
-              <img 
+              <Image 
                 src="/images/hero/home.jpg" 
                 alt="StryveAhead Growth Intelligence Suite"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+                priority
               />
             </div>
           </motion.div>

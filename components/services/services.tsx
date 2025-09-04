@@ -1,8 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import Container from '@/components/container'
 import ServiceCard from './service-card'
+import ServiceModal from './service-modal'
 import { servicesContent } from '@/lib/data/content'
 import { SupportAgentIcon, AccountBalanceWalletIcon, TrendingUpIcon, AnalyticsIcon, StorefrontIcon, CampaignIcon, InventoryIcon, GroupsIcon } from './service-icons'
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/animations/variants'
@@ -31,6 +33,18 @@ const getServiceIcon = (iconName: string) => {
 }
 
 export default function Services() {
+  const [selectedService, setSelectedService] = useState<typeof servicesContent.services[0] | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const openModal = (service: typeof servicesContent.services[0]) => {
+    setSelectedService(service)
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+    setSelectedService(null)
+  }
 
   return (
     <section 
@@ -86,12 +100,21 @@ export default function Services() {
                   title={service.title}
                   description={service.description}
                   icon={getServiceIcon(service.icon)}
+                  onClick={() => openModal(service)}
                 />
               ))}
             </div>
           </motion.div>
         </div>
       </Container>
+
+      {/* Service Modal */}
+      <ServiceModal
+        service={selectedService}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        icon={selectedService ? getServiceIcon(selectedService.icon) : null}
+      />
     </section>
   )
 }

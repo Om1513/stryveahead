@@ -1,7 +1,6 @@
 import { cn } from '@/lib/utils'
 import NavLink from './nav-link'
-import { navigationItems, loginItem } from '@/lib/navigation'
-import Link from 'next/link'
+import { navigationItems } from '@/lib/navigation'
 
 interface NavigationProps {
   className?: string
@@ -35,12 +34,12 @@ export default function Navigation({ className, currentPath = '/' }: NavigationP
         </nav>
         
         {/* Login Button */}
-        <Link
+        {/* <Link
           href={loginItem.href}
           className="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-6 py-2 rounded-full font-medium hover:from-orange-600 hover:to-yellow-600 transition-all duration-200 hover:scale-105"
         >
           {loginItem.label}
-        </Link>
+        </Link> */}
       </div>
     </>
   )

@@ -4,6 +4,7 @@ import Container from '@/components/container'
 import FeatureItem from './feature-item'
 import { Phone, Mail } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { aboutContent } from '@/lib/data/content'
 import { slideInLeft, slideInRight, staggerContainer, staggerItem, floating } from '@/lib/animations/variants'
 
@@ -21,10 +22,13 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
-              <img 
+              <Image 
                 src="/images/about/teamwork.jpg" 
                 alt="StryveAhead Team Collaboration"
-                className="w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+                priority
               />
             </div>
             

@@ -5,13 +5,15 @@ interface ServiceCardProps {
   description: string
   icon: React.ReactNode
   className?: string
+  onClick?: () => void
 }
 
 export default function ServiceCard({ 
   title, 
   description, 
   icon, 
-  className
+  className,
+  onClick
 }: ServiceCardProps) {
   return (
     <div 
@@ -23,6 +25,7 @@ export default function ServiceCard({
         className
       )}
       aria-label={`${title} service`}
+      onClick={onClick}
     >
       {/* Card Background */}
       <div className="absolute inset-0 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 ease-out group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.15)]" />
