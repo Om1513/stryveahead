@@ -54,7 +54,7 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.h2 
-              className="text-h2 font-bold text-neutral-900 mb-4 sm:mb-6 font-poppins"
+              className="text-[60px] font-bold leading-[60px] text-neutral-900 mb-4 sm:mb-6 font-inter"
               variants={staggerItem}
             >
               {aboutContent.title}
@@ -87,7 +87,7 @@ export default function About() {
               className="bg-neutral-50 p-4 sm:p-6 rounded-xl"
               variants={staggerItem}
             >
-              <h3 className="text-h5 font-semibold text-neutral-900 mb-3 sm:mb-4 font-poppins">
+              <h3 className="text-h5 font-semibold text-neutral-900 mb-3 sm:mb-4 font-inter">
                 {aboutContent.contactSection.title}
               </h3>
               

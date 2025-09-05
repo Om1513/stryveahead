@@ -10,22 +10,26 @@ import { ctaContent } from '@/lib/data/content'
 import { fadeInUp, staggerItem } from '@/lib/animations/variants'
 
 interface FormData {
-  fullName: string
+  firstName: string
+  lastName: string
   email: string
   phone: string
   company: string
   designation: string
   industry: string
+  websiteUrl: string
 }
 
 export default function CTA() {
   const [formData, setFormData] = useState<FormData>({
-    fullName: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
     company: '',
     designation: '',
-    industry: ''
+    industry: '',
+    websiteUrl: ''
   })
   const [isLoading, setIsLoading] = useState(false)
   const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null)
@@ -38,7 +42,7 @@ export default function CTA() {
     e.preventDefault()
     
     // Validate required fields
-    const requiredFields = ['fullName', 'email', 'phone', 'company', 'designation', 'industry']
+    const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'company', 'designation', 'industry', 'websiteUrl']
     const emptyFields = requiredFields.filter(field => !formData[field as keyof FormData].trim())
     
     if (emptyFields.length > 0) {
@@ -55,12 +59,14 @@ export default function CTA() {
       
       setMessage({ type: 'success', text: 'Thank you for your interest! We will get back to you soon.' })
       setFormData({
-        fullName: '',
+        firstName: '',
+        lastName: '',
         email: '',
         phone: '',
         company: '',
         designation: '',
-        industry: ''
+        industry: '',
+        websiteUrl: ''
       })
     } catch {
       setMessage({ type: 'error', text: 'Something went wrong. Please try again.' })
@@ -201,7 +207,7 @@ export default function CTA() {
         >
           {/* Heading */}
           <motion.h2 
-            className="text-[67px] font-bold leading-[80px] text-white font-asap mb-6"
+            className="text-[60px] font-bold leading-[40px] text-white font-inter mb-6"
             variants={staggerItem}
           >
             {ctaContent.title}
@@ -209,7 +215,7 @@ export default function CTA() {
           
           {/* Description */}
           <motion.p 
-            className="text-white text-base leading-6 font-normal font-plus-jakarta max-w-[844px] mx-auto mb-12"
+            className="text-white text-base leading-6 font-normal font-inter max-w-[844px] mx-auto mb-12"
             variants={staggerItem}
           >
             {ctaContent.description}
@@ -218,67 +224,67 @@ export default function CTA() {
           {/* Contact Form */}
           <div className="max-w-2xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Row 1: Full Name & Email */}
+              {/* Row 1: First Name & Last Name */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white rounded-xl p-4">
                   <Input
                     type="text"
-                    placeholder="Full Name *"
-                    value={formData.fullName}
-                    onChange={(e) => handleInputChange('fullName', e.target.value)}
-                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    placeholder="First Name *"
+                    value={formData.firstName}
+                    onChange={(e) => handleInputChange('firstName', e.target.value)}
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-inter text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                     disabled={isLoading}
                     required
                   />
                 </div>
+                <div className="bg-white rounded-xl p-4">
+                  <Input
+                    type="text"
+                    placeholder="Last Name *"
+                    value={formData.lastName}
+                    onChange={(e) => handleInputChange('lastName', e.target.value)}
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-inter text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    disabled={isLoading}
+                    required
+                  />
+                </div>
+              </div>
+              
+              {/* Row 2: Email & Phone */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white rounded-xl p-4">
                   <Input
                     type="email"
                     placeholder="Email Address *"
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
-                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-inter text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                     disabled={isLoading}
                     required
                   />
                 </div>
-              </div>
-              
-              {/* Row 2: Phone & Company */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white rounded-xl p-4">
                   <Input
                     type="tel"
                     placeholder="Phone Number / WhatsApp *"
                     value={formData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
-                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
-                    disabled={isLoading}
-                    required
-                  />
-                </div>
-                <div className="bg-white rounded-xl p-4">
-                  <Input
-                    type="text"
-                    placeholder="Company Name *"
-                    value={formData.company}
-                    onChange={(e) => handleInputChange('company', e.target.value)}
-                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-inter text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                     disabled={isLoading}
                     required
                   />
                 </div>
               </div>
               
-              {/* Row 3: Designation & Industry */}
+              {/* Row 3: Company Name & Designation */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white rounded-xl p-4">
                   <Input
                     type="text"
-                    placeholder="Designation / Role *"
-                    value={formData.designation}
-                    onChange={(e) => handleInputChange('designation', e.target.value)}
-                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    placeholder="Company Name *"
+                    value={formData.company}
+                    onChange={(e) => handleInputChange('company', e.target.value)}
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-inter text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                     disabled={isLoading}
                     required
                   />
@@ -286,10 +292,36 @@ export default function CTA() {
                 <div className="bg-white rounded-xl p-4">
                   <Input
                     type="text"
+                    placeholder="Designation / Role *"
+                    value={formData.designation}
+                    onChange={(e) => handleInputChange('designation', e.target.value)}
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-inter text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    disabled={isLoading}
+                    required
+                  />
+                </div>
+              </div>
+              
+              {/* Row 4: Industry & Website URL */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-xl p-4">
+                  <Input
+                    type="text"
                     placeholder="Industry / Sector *"
                     value={formData.industry}
                     onChange={(e) => handleInputChange('industry', e.target.value)}
-                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-plus-jakarta text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-inter text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
+                    disabled={isLoading}
+                    required
+                  />
+                </div>
+                <div className="bg-white rounded-xl p-4">
+                  <Input
+                    type="url"
+                    placeholder="Website URL *"
+                    value={formData.websiteUrl}
+                    onChange={(e) => handleInputChange('websiteUrl', e.target.value)}
+                    className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-inter text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                     disabled={isLoading}
                     required
                   />
@@ -301,7 +333,7 @@ export default function CTA() {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="h-16 px-12 bg-orange-button hover:bg-orange-button/90 text-white font-asap font-semibold text-base leading-6 rounded-2xl shadow-[0_62px_85px_-22px_rgba(0,0,0,0.30)] transition-colors"
+                  className="h-16 px-12 bg-orange-button hover:bg-orange-button/90 text-white font-inter font-semibold text-base leading-6 rounded-2xl shadow-[0_62px_85px_-22px_rgba(0,0,0,0.30)] transition-colors"
                 >
                   {isLoading ? (
                     <>
@@ -315,7 +347,7 @@ export default function CTA() {
               </div>
               
               {/* Disclaimer */}
-              <p className="text-white/70 text-sm text-center font-plus-jakarta">
+              <p className="text-white/70 text-sm text-center font-inter">
                 {ctaContent.disclaimer}
               </p>
             </form>

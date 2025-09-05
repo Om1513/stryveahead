@@ -72,14 +72,14 @@ export default function Services() {
           >
             {/* Title */}
             <motion.div className="lg:max-w-[545px]" variants={staggerItem}>
-              <h2 className="font-asap text-[67px] font-bold leading-[80px] text-heading">
+              <h2 className="font-inter text-[60px] font-bold leading-[40px] text-heading">
                 {servicesContent.title}
               </h2>
             </motion.div>
             
             {/* Description */}
             <motion.div className="lg:max-w-[661px] lg:ml-auto" variants={staggerItem}>
-              <p className="font-plus-jakarta text-base font-normal leading-6 text-paragraph mt-8">
+              <p className="font-inter text-base font-normal leading-6 text-paragraph mt-8">
                 {servicesContent.description}
               </p>
             </motion.div>

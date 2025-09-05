@@ -18,14 +18,6 @@ export const clients: Client[] = [
     logoPath: '/images/clients/bbetter.jpg',
   },
   {
-    name: 'BoldCare',
-    logoPath: '/images/clients/boldcare.jpg',
-  },
-  {
-    name: 'EatBetter',
-    logoPath: '/images/clients/eatbetter.jpg',
-  },
-  {
     name: 'Indic',
     logoPath: '/images/clients/indic.png',
   },
@@ -48,10 +40,6 @@ export const clients: Client[] = [
   {
     name: 'Scandalous',
     logoPath: '/images/clients/scandalous.jpg',
-  },
-  {
-    name: 'Terra',
-    logoPath: '/images/clients/terra.png',
   },
   {
     name: 'TWF',

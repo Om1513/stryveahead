@@ -51,7 +51,7 @@ export default function Hero() {
       </div>
       
       <Container className="relative z-10">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 items-center">
           {/* Hero Content */}
           <motion.div 
             className="text-white lg:flex-[2] lg:max-w-4xl"
@@ -60,14 +60,14 @@ export default function Hero() {
             animate="visible"
           >
             <motion.h1 
-              className="text-hero font-bold font-sf-pro mb-6 sm:mb-8 leading-[1.1] tracking-[-0.02em]"
+              className="text-[55px] font-bold font-inter mb-6 sm:mb-8 leading-[60px] tracking-[-0.02em]"
               variants={staggerItem}
             >
               {heroContent.title}
             </motion.h1>
 
             <motion.p 
-              className="text-body-lg sm:text-xl font-sf-pro mb-8 sm:mb-12 text-white/90 leading-[1.5] font-medium tracking-[-0.01em]"
+              className="text-body-lg sm:text-xl font-inter mb-8 sm:mb-12 text-white/90 leading-[1.5] font-medium tracking-[-0.01em]"
               variants={staggerItem}
             >
               {heroContent.description}
@@ -76,7 +76,7 @@ export default function Hero() {
             <motion.div variants={staggerItem}>
               <Button
                 size="lg"
-                className="bg-orange-button hover:bg-orange-button/90 text-white font-semibold font-sf-pro px-6 sm:px-12 py-4 sm:py-5 h-[50px] sm:h-[60px] rounded-2xl shadow-[0px_62px_85px_-22px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-300 text-base sm:text-lg tracking-[-0.01em]"
+                className="bg-orange-button hover:bg-orange-button/90 text-white font-semibold font-inter px-6 sm:px-12 py-4 sm:py-5 h-[50px] sm:h-[60px] rounded-2xl shadow-[0px_62px_85px_-22px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-300 text-base sm:text-lg tracking-[-0.01em]"
               >
                 {heroContent.primaryCta}
               </Button>

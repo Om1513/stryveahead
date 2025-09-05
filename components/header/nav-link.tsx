@@ -21,7 +21,7 @@ export default function NavLink({
   isActive = false
 }: NavLinkProps) {
   const baseClasses = cn(
-    'relative inline-flex items-center gap-2 font-asap text-[16px] font-bold leading-[24px] transition-all duration-200 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 rounded-md',
+    'relative inline-flex items-center gap-2 font-inter text-[16px] font-bold leading-[24px] transition-all duration-200 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 rounded-md',
     'bg-gradient-to-br from-[#F25227] to-[#E8AA29] bg-clip-text text-transparent',
     'hover:from-[#F25227] hover:to-[#E8AA29]',
     isActive && 'font-extrabold',

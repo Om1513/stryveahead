@@ -107,7 +107,7 @@ export default function MobileMenu({
         >
           {/* Menu Header */}
           <div className="flex items-center justify-between p-6 border-b border-neutral-200">
-            <span className="text-lg font-semibold font-poppins text-neutral-900">
+            <span className="text-lg font-semibold font-inter text-neutral-900">
               Menu
             </span>
             <Button

@@ -25,13 +25,7 @@ module.exports = {
         ...typography.fontWeight,
       },
       fontFamily: {
-        'sf-pro': ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
-        'sf-compact': ['SF Compact Display', 'SF Compact Text', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        'ny': ['New York', 'Times New Roman', 'serif'],
-        inter: ['var(--font-inter)', 'sans-serif'],
-        poppins: ['var(--font-poppins)', 'sans-serif'],
-        asap: ['var(--font-asap)', 'sans-serif'],
-        'plus-jakarta': ['var(--font-plus-jakarta)', 'sans-serif'],
+        inter: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

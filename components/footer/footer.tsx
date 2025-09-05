@@ -37,7 +37,7 @@ export default function Footer() {
                 <motion.a
                   key={item.id}
                   href={item.href}
-                  className="text-paragraph text-center font-asap text-sm sm:text-base font-bold leading-6 hover:text-orange-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 rounded-sm whitespace-nowrap"
+                  className="text-paragraph text-center font-inter text-sm sm:text-base font-bold leading-6 hover:text-orange-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 rounded-sm whitespace-nowrap"
                   variants={{
                     hidden: { opacity: 0, x: -30 },
                     visible: {
@@ -80,7 +80,7 @@ export default function Footer() {
                 }}
               >
                 <MapPin className="w-5 h-5 text-orange-500" />
-                <span className="text-paragraph font-asap text-sm sm:text-base font-normal leading-6 whitespace-nowrap">
+                <span className="text-paragraph font-inter text-sm sm:text-base font-normal leading-6 whitespace-nowrap">
                   {footerContent.contact.address.street}, {footerContent.contact.address.city}
                 </span>
               </motion.div>
@@ -105,7 +105,7 @@ export default function Footer() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Phone className="w-5 h-5 text-orange-500" />
-                <span className="text-paragraph font-asap text-sm sm:text-base font-normal leading-6 whitespace-nowrap">
+                <span className="text-paragraph font-inter text-sm sm:text-base font-normal leading-6 whitespace-nowrap">
                   {footerContent.contact.phone}
                 </span>
               </motion.a>
@@ -130,7 +130,7 @@ export default function Footer() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Mail className="w-5 h-5 text-orange-500" />
-                <span className="text-paragraph font-asap text-sm sm:text-base font-normal leading-6 whitespace-nowrap">
+                <span className="text-paragraph font-inter text-sm sm:text-base font-normal leading-6 whitespace-nowrap">
                   {footerContent.contact.email}
                 </span>
               </motion.a>
@@ -138,7 +138,7 @@ export default function Footer() {
 
             {/* Company Description */}
             <motion.p 
-              className="text-paragraph text-center font-plus-jakarta text-sm sm:text-base font-normal leading-6 max-w-[600px] sm:max-w-[700px] px-4"
+              className="text-paragraph text-center font-inter text-sm sm:text-base font-normal leading-6 max-w-[600px] sm:max-w-[700px] px-4"
               variants={staggerItem}
             >
               We partner with high-growth brands to accelerate scale, unlock competitive advantage, and maximise profitability.

@@ -89,12 +89,12 @@ export default function ServiceModal({ service, isOpen, onClose, icon }: Service
               </div>
 
               {/* Title */}
-              <h2 className="font-asap text-3xl font-bold leading-tight text-heading text-center mb-4">
+              <h2 className="font-inter text-3xl font-bold leading-tight text-heading text-center mb-4">
                 {service.title}
               </h2>
 
               {/* One-line description */}
-              <p className="font-plus-jakarta text-lg font-medium leading-7 text-paragraph text-center mb-6">
+              <p className="font-inter text-lg font-medium leading-7 text-paragraph text-center mb-6">
                 {service.description}
               </p>
 
@@ -103,7 +103,7 @@ export default function ServiceModal({ service, isOpen, onClose, icon }: Service
 
               {/* Detailed description */}
               <div className="max-w-xl mx-auto">
-                <p className="font-plus-jakarta text-base font-normal leading-7 text-paragraph text-center">
+                <p className="font-inter text-base font-normal leading-7 text-paragraph text-center">
                   {service.detailedDescription}
                 </p>
               </div>

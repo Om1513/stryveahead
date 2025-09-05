@@ -41,10 +41,10 @@ export default function ServiceCard({
 
         {/* Text Content */}
         <div className="flex-1 flex flex-col justify-center">
-          <h3 className="font-asap text-xl font-bold leading-7 mb-4 text-heading transition-colors duration-300 ease-out">
+          <h3 className="font-inter text-xl font-bold leading-7 mb-4 text-heading transition-colors duration-300 ease-out">
             {title}
           </h3>
-          <p className="font-plus-jakarta text-sm font-normal leading-6 text-paragraph transition-colors duration-300 ease-out">
+          <p className="font-inter text-sm font-normal leading-6 text-paragraph transition-colors duration-300 ease-out">
             {description}
           </p>
         </div>

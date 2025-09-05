@@ -311,10 +311,10 @@ export default function Team() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <div className="mb-8">
-              <h2 className="text-[67px] font-bold leading-[80px] text-neutral-900 mb-8 font-asap">
+              <h2 className="text-[60px] font-bold leading-[60px] text-neutral-900 mb-8 font-inter">
                 {teamContent.title}
               </h2>
-              <p className="text-base font-normal leading-6 text-neutral-600 font-plus-jakarta whitespace-pre-line">
+              <p className="text-base font-normal leading-6 text-neutral-600 font-inter whitespace-pre-line">
                 {teamContent.description}
               </p>
             </div>

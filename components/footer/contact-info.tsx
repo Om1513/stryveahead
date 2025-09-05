@@ -4,7 +4,7 @@ import { footerContent } from '@/lib/data/content'
 export default function ContactInfo() {
   return (
     <div>
-      <h3 className="text-h6 font-semibold mb-6 font-poppins">
+      <h3 className="text-h6 font-semibold mb-6 font-inter">
         Contact Us
       </h3>
       <ul className="space-y-4">

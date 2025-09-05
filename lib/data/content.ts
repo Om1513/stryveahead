@@ -102,7 +102,7 @@ export const statsContent = {
     },
     {
       id: "brands-supported",
-      number: '100+',
+      number: '40+',
       label: 'Brands Supported',
       highlighted: true
     },
@@ -113,7 +113,7 @@ export const statsContent = {
     },
     {
       id: "channels-covered",
-      number: '8',
+      number: '10',
       label: 'Service Areas'
     }
   ]
@@ -121,7 +121,7 @@ export const statsContent = {
 
 export const teamContent = {
   title: "Our Founder",
-  description: "Utpal Doshi founded Ignition Capital Advisors with a bold mission to bridge the gap between entrepreneurs and investors, helping India's next generation of high-growth startups.\n\nAs a Chartered Accountant (CA) and Investor Partner at 100X.VC, he brings over two decades of expertise in venture capital, startup acceleration, and strategic advisory services.\n\nHe goes beyond capital to deliver curated insights, industry expertise, and deep strategic support. His focus spans startup investments, M&A advisory, and IPO readiness — building enduring partnerships rooted in transparency, trust, and transformative outcomes.",
+  description: "StryveAhead Advisors was born out of Utpal Doshi’s firsthand experience of watching ambitious founders struggle to scale. As an investor and advisor, he often saw promising brands with strong products lose momentum — not due to lack of vision, but because they lacked the right sales strategy, execution support, and investor readiness. \n\n Utpal’s journey as an investor and advisor has been shaped by his close engagement with early-stage and high-growth startups. As an Investor Partner at 100X.VC and founder of Ignition Capital Advisors, he has worked hand-in-hand with entrepreneurs, helping them navigate the complexities of building scalable businesses.\n\nOver the years, he has partnered with several D2C brands, and this experience revealed a crucial gap — founders often need more than capital and advice; they need a partner who can translate vision into sustainable growth. StryveAhead was created to bridge that gap, offering end-to-end strategic solutions that help brands unlock competitive advantage, achieve profitability, and scale with confidence.",
   members: [
     {
       id: "utpal-doshi",

@@ -47,14 +47,14 @@ export default function Stat({ number, label, highlighted = false, onMouseEnter 
       <div className="absolute inset-0 flex flex-col items-center justify-center px-8 py-8">
         <div className="flex flex-col items-center gap-2">
           <div 
-            className={`font-asap font-bold text-[50px] leading-[56px] transition-colors duration-200 ease-out motion-reduce:transition-none ${
+            className={`font-inter font-bold text-[50px] leading-[56px] transition-colors duration-200 ease-out motion-reduce:transition-none ${
               highlighted ? 'text-white' : 'text-[#3C3C3C]'
             }`}
           >
             {number}
           </div>
           <div 
-            className={`font-asap font-bold text-[21px] leading-[24px] text-center transition-colors duration-200 ease-out motion-reduce:transition-none ${
+            className={`font-inter font-bold text-[21px] leading-[24px] text-center transition-colors duration-200 ease-out motion-reduce:transition-none ${
               highlighted ? 'text-white' : 'text-paragraph'
             }`}
           >

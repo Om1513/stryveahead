@@ -36,10 +36,10 @@ export default function TeamCard({
       <div className="flex flex-col items-center gap-6 self-stretch">
         <div className="flex flex-col items-start gap-6 self-stretch">
           <div className="flex flex-col items-start gap-2 self-stretch">
-            <div className="self-stretch text-center font-asap text-[21px] font-bold leading-6 text-neutral-900">
+            <div className="self-stretch text-center font-inter text-[21px] font-bold leading-6 text-neutral-900">
               {name}
             </div>
-            <div className={`self-stretch text-center font-plus-jakarta text-base font-normal leading-6 ${
+            <div className={`self-stretch text-center font-inter text-base font-normal leading-6 ${
               featured 
                 ? 'bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent' 
                 : 'text-neutral-600'
@@ -47,7 +47,7 @@ export default function TeamCard({
               {title}
             </div>
             {bio && (
-              <div className="self-stretch text-center font-plus-jakarta text-sm font-normal leading-5 text-neutral-500 mt-2">
+              <div className="self-stretch text-center font-inter text-sm font-normal leading-5 text-neutral-500 mt-2">
                 {bio}
               </div>
             )}

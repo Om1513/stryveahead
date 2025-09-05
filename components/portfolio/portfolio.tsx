@@ -6,7 +6,7 @@ export default function Portfolio() {
     <div className="py-20 bg-white">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h2 className="text-[60px] font-bold leading-[60px] text-gray-900 mb-6 font-inter">
             Our Portfolio
           </h2>
         </div>
@@ -16,11 +16,6 @@ export default function Portfolio() {
           <ClientLogoBelt className="py-8 md:py-12" />
         </div>
         
-        <div className="text-center mt-12">
-          <p className="text-sm text-gray-500">
-            Hover over any logo to pause the animation and see it up close
-          </p>
-        </div>
       </Container>
     </div>
   )
