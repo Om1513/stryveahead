@@ -147,33 +147,4 @@ html {
   animation-play-state: paused;
 }
 
-/* Apple taskbar-style hover effects */
-.client-logo-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-origin: center;
-  cursor: pointer;
-  /* Prevent layout shifts */
-  will-change: transform;
-  /* Smooth transitions */
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.client-logo-hover:hover {
-  transform: scale(1.4) translateY(-8px);
-  z-index: 50;
-  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.15));
-}
-
-/* Enhanced hover state for the logo image */
-.client-logo-image {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform, filter;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.client-logo-hover:hover .client-logo-image {
-  filter: grayscale(0) brightness(1.1);
-  transform: scale(1.1);
-}
+/* Client logo belt smooth scrolling */

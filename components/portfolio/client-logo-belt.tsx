@@ -18,10 +18,10 @@ export default function ClientLogoBelt({ className }: ClientLogoBeltProps) {
   const pausedPositionRef = useRef<number>(0)
   
   // Calculate dimensions
-  const logoWidth = 200 // Width per logo including gap
+  const logoWidth = 252 // Width per logo including gap (220px + 32px gap)
   const totalLogos = clients.length
   const singleSetWidth = totalLogos * logoWidth
-  const animationDuration = 100 // seconds for one complete cycle
+  const animationDuration = 40 // seconds for one complete cycle
   
   const startAnimation = useCallback(() => {
     const animate = (currentTime: number) => {
@@ -71,12 +71,12 @@ export default function ClientLogoBelt({ className }: ClientLogoBeltProps) {
   }
 
   // Create multiple sets for seamless infinite scroll
-  const logoSets = Array(3).fill(clients).flat()
+  const logoSets = Array(4).fill(clients).flat()
 
   return (
     <div className={cn('relative overflow-hidden w-full', className)}>
       <motion.div
-        className="flex items-center gap-8"
+        className="flex items-center"
         style={{ x }}
       >
         {logoSets.map((client, index) => {
@@ -86,9 +86,8 @@ export default function ClientLogoBelt({ className }: ClientLogoBeltProps) {
           return (
             <motion.div
               key={`set${setIndex}-${logoIndex}`}
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
               className="flex-shrink-0"
+              style={{ marginRight: '32px' }}
             >
               <ClientLogo
                 client={client}

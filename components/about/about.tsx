@@ -21,7 +21,7 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
+            <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden">
               <Image 
                 src="/images/about/teamwork.jpg" 
                 alt="StryveAhead Team Collaboration"

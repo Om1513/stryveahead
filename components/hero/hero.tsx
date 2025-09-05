@@ -9,7 +9,7 @@ import { staggerContainer, staggerItem, slideInRight, floating } from '@/lib/ani
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-hero min-h-screen flex items-center overflow-hidden">
+    <section className="relative bg-gradient-hero py-8 sm:py-12 lg:py-16 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         {/* Semi-transparent white rectangles */}
@@ -51,10 +51,10 @@ export default function Hero() {
       </div>
       
       <Container className="relative z-10">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 items-center">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
           {/* Hero Content */}
           <motion.div 
-            className="text-white lg:flex-[2] lg:max-w-4xl"
+            className="text-white lg:flex-[3] lg:max-w-5xl"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
@@ -85,7 +85,7 @@ export default function Hero() {
           
           {/* Hero Image */}
           <motion.div 
-            className="relative h-[300px] sm:h-[400px] lg:h-[592px] lg:flex-[1] lg:ml-12 w-full"
+            className="relative h-[400px] sm:h-[500px] lg:h-[700px] lg:flex-[2] w-full"
             variants={slideInRight}
             initial="hidden"
             animate="visible"

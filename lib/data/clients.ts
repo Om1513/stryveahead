@@ -53,4 +53,12 @@ export const clients: Client[] = [
     name: 'VanityWagon',
     logoPath: '/images/clients/vanitywagon.jpg',
   },
+  {
+    name: 'Mr. Munchies',
+    logoPath: '/images/clients/munchies.jpg',
+  },
+  {
+    name: 'Karibo Wine',
+    logoPath: '/images/clients/karibo.jpg',
+  },
 ]
