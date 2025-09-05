@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static optimization for better performance
-  output: 'standalone',
   
   // Image optimization configuration
   images: {
@@ -29,7 +27,6 @@ const nextConfig = {
   // Experimental features for better performance
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
-    optimizeCss: true,
     scrollRestoration: true,
   },
   
