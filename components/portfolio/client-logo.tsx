@@ -31,7 +31,7 @@ export default function ClientLogo({
   }
 
   // Special sizing for specific clients
-  const isSpecialSize = client.name === 'Noto' || client.name === 'Scandalous' || client.name === 'BBetter'
+  const isSpecialSize = client.name === 'TWF' || client.name === 'Scandalous' || client.name === 'Indic' || client.name === "VanityWagon" || client.name === "BBetter"
   const imageWidth = isSpecialSize ? 400 : 200
   const imageHeight = isSpecialSize ? 200 : 100
 

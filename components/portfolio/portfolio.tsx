@@ -12,7 +12,7 @@ export default function Portfolio() {
         </div>
         
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white pointer-events-none z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/60 pointer-events-none z-10" />
           <ClientLogoBelt className="py-8 md:py-12" />
         </div>
         
