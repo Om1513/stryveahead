@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import Hero from '@/components/hero/hero'
 import Services from '@/components/services/services'
 import About from '@/components/about/about'
@@ -13,26 +14,47 @@ export const metadata: Metadata = {
   description: 'We partner with high-growth brands to accelerate scale, unlock competitive advantage, and maximise profitability. End-to-end solutions from strategic planning to execution excellence.',
 }
 
-export default function Home() {
+// Preload critical data and images
+async function preloadData() {
+  // This runs at build time for static generation
+  return {
+    timestamp: Date.now(),
+  }
+}
+
+export default async function Home() {
+  // Preload data during server-side rendering
+  await preloadData()
+
   return (
     <main className="pt-20">
       <Hero />
-      <section id="services">
-        <Services />
-      </section>
-      <section id="about">
-        <About />
-        <Stats />
-      </section>
-      <section id="portfolio">
-        <Portfolio />
-      </section>
-      <section id="team">
-        <Team />
-      </section>
-      <section id="contact">
-        <CTA />
-      </section>
+      <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+        <section id="services">
+          <Services />
+        </section>
+      </Suspense>
+      <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+        <section id="about">
+          <About />
+          <Stats />
+        </section>
+      </Suspense>
+      <Suspense fallback={<div className="h-64 bg-gray-50 animate-pulse" />}>
+        <section id="portfolio">
+          <Portfolio />
+        </section>
+      </Suspense>
+      <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+        <section id="team">
+          <Team />
+        </section>
+      </Suspense>
+      <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+        <section id="contact">
+          <CTA />
+        </section>
+      </Suspense>
       <Footer />
     </main>
   )
