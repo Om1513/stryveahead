@@ -199,7 +199,7 @@ export default function CTA() {
       <Container className="relative z-10">
         {/* Gradient Box */}
         <motion.div 
-          className="mx-auto max-w-6xl rounded-2xl bg-gradient-cta shadow-[24px_30px_51px_0_rgba(0,0,0,0.10)] p-16 text-center"
+          className="mx-auto max-w-6xl rounded-2xl bg-gradient-cta shadow-[24px_30px_51px_0_rgba(0,0,0,0.10)] p-8 sm:p-12 lg:p-16 text-center"
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
@@ -207,7 +207,7 @@ export default function CTA() {
         >
           {/* Heading */}
           <motion.h2 
-            className="text-[60px] font-bold leading-[40px] text-white font-inter mb-6"
+            className="text-[40px] sm:text-[50px] lg:text-[67px] font-bold leading-[1.1] text-white font-inter mb-6 whitespace-nowrap"
             variants={staggerItem}
           >
             {ctaContent.title}

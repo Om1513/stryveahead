@@ -7,8 +7,7 @@ import FocusTrap from 'focus-trap-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import NavLink from './nav-link'
-import { navigationItems, loginItem } from '@/lib/navigation'
-import Link from 'next/link'
+import { navigationItems } from '@/lib/navigation'
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -59,7 +58,7 @@ export default function MobileMenu({
         variant="ghost"
         size="icon"
         className={cn(
-          'sm:hidden relative z-50 w-10 h-10',
+          'sm:hidden relative z-[60] w-10 h-10',
           className
         )}
         onClick={() => setIsOpen(!isOpen)}
@@ -86,8 +85,8 @@ export default function MobileMenu({
       {/* Backdrop */}
       <div
         className={cn(
-          'fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-[200ms] motion-reduce:transition-none sm:hidden',
-          isOpen ? 'opacity-100 z-40' : 'opacity-0 pointer-events-none'
+          'fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-[200ms] motion-reduce:transition-none sm:hidden z-[100]',
+          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         )}
         onClick={() => setIsOpen(false)}
         aria-hidden="true"
@@ -98,7 +97,7 @@ export default function MobileMenu({
         <div
           id="mobile-menu"
           className={cn(
-            'fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-large transform transition-transform duration-[300ms] motion-reduce:transition-none ease-out sm:hidden z-50',
+            'fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-[300ms] motion-reduce:transition-none ease-out sm:hidden z-[110]',
             isOpen ? 'translate-x-0' : 'translate-x-full'
           )}
           role="dialog"
@@ -107,18 +106,18 @@ export default function MobileMenu({
         >
           {/* Menu Header */}
           <div className="flex items-center justify-between p-6 border-b border-neutral-200">
-            <span className="text-lg font-semibold font-inter text-neutral-900">
-              Menu
-            </span>
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(false)}
-              className="w-8 h-8"
+              className="w-10 h-10 -ml-2"
               aria-label="Close menu"
             >
-              <X className="w-4 h-4" />
+              <X className="w-5 h-5" />
             </Button>
+            <span className="text-lg font-semibold font-inter text-neutral-900 flex-1 text-center -ml-10">
+              Menu
+            </span>
           </div>
 
           {/* Navigation Items */}
@@ -133,28 +132,8 @@ export default function MobileMenu({
                   className="w-full justify-start text-base py-3 px-4 after:hidden hover:bg-neutral-50 rounded-md transition-all duration-200 hover:translate-x-1 motion-reduce:transition-none motion-reduce:hover:translate-x-0"
                 />
               ))}
-              
-              {/* Login Link */}
-              <Link
-                href={loginItem.href}
-                onClick={handleLinkClick}
-                className="w-full justify-start text-base py-3 px-4 hover:bg-neutral-50 rounded-md transition-all duration-200 hover:translate-x-1 motion-reduce:transition-none motion-reduce:hover:translate-x-0 bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-medium mt-4"
-              >
-                {loginItem.label}
-              </Link>
             </div>
           </nav>
-
-          {/* CTA Section (Optional) */}
-          <div className="absolute bottom-6 left-6 right-6">
-            <Button 
-              className="w-full" 
-              onClick={() => setIsOpen(false)}
-              asChild
-            >
-              <a href="#contact">Get Started</a>
-            </Button>
-          </div>
         </div>
       </FocusTrap>
     </>
