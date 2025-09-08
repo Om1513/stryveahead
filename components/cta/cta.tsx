@@ -42,7 +42,7 @@ export default function CTA() {
     e.preventDefault()
     
     // Validate required fields
-    const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'company', 'designation', 'industry', 'websiteUrl']
+    const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'company', 'designation', 'industry']
     const emptyFields = requiredFields.filter(field => !formData[field as keyof FormData].trim())
     
     if (emptyFields.length > 0) {
@@ -318,12 +318,11 @@ export default function CTA() {
                 <div className="bg-white rounded-xl p-4">
                   <Input
                     type="url"
-                    placeholder="Website URL *"
+                    placeholder="Website URL (Optional)"
                     value={formData.websiteUrl}
                     onChange={(e) => handleInputChange('websiteUrl', e.target.value)}
                     className="border-0 bg-transparent text-paragraph placeholder:text-paragraph font-inter text-base leading-6 h-auto p-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                     disabled={isLoading}
-                    required
                   />
                 </div>
               </div>

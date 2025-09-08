@@ -107,11 +107,6 @@ export const statsContent = {
       highlighted: true
     },
     {
-      id: "growth-rate",
-      number: '3X',
-      label: 'Average Growth'
-    },
-    {
       id: "channels-covered",
       number: '10',
       label: 'Service Areas'

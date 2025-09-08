@@ -9,7 +9,7 @@ import { staggerContainer } from '@/lib/animations/variants'
 
 export default function Stats() {
   const [hoveredCardId, setHoveredCardId] = useState<string | null>(null)
-  const [lastHighlightedCardId, setLastHighlightedCardId] = useState<string>('happy-clients') // Default to second card initially
+  const [lastHighlightedCardId, setLastHighlightedCardId] = useState<string>('brands-supported') // Default to highlighted card initially
 
   const handleCardHover = (cardId: string) => {
     setHoveredCardId(cardId)
@@ -107,7 +107,7 @@ export default function Stats() {
 
       <Container className="relative z-10">
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
