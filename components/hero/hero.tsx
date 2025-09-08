@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import Container from '@/components/container'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { heroContent } from '@/lib/data/content'
 import { staggerContainer, staggerItem, slideInRight, floating } from '@/lib/animations/variants'
 
@@ -74,12 +75,14 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={staggerItem}>
-              <Button
-                size="lg"
-                className="bg-orange-button hover:bg-orange-button/90 text-white font-semibold font-inter px-6 sm:px-12 py-4 sm:py-5 h-[50px] sm:h-[60px] rounded-2xl shadow-[0px_62px_85px_-22px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-300 text-base sm:text-lg tracking-[-0.01em]"
-              >
-                {heroContent.primaryCta}
-              </Button>
+              <Link href="#contact">
+                <Button
+                  size="lg"
+                  className="bg-orange-button hover:bg-orange-button/90 text-white font-semibold font-inter px-6 sm:px-12 py-4 sm:py-5 h-[50px] sm:h-[60px] rounded-2xl shadow-[0px_62px_85px_-22px_rgba(0,0,0,0.3)] hover:scale-105 transition-all duration-300 text-base sm:text-lg tracking-[-0.01em]"
+                >
+                  {heroContent.primaryCta}
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
           

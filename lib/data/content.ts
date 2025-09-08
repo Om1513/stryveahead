@@ -1,8 +1,8 @@
 // Content data extracted from components for better maintainability
 
 export const heroContent = {
-  title: "Accelerate Scale, Unlock Competitive Advantage, Maximise Profitability",
-  description: "At StryveAhead Advisors, we partner with high-growth brands to accelerate scale, unlock competitive advantage, and maximise profitability. In today's dynamic consumer landscape, growth isn't just about going online — it's about engineering the right sales strategy, activating high-impact channels, and leveraging data to drive outcomes.",
+  title: "Raise. Scale. Grow.",
+  description: "At StryveAhead Advisors, we empower D2C founders to secure early-stage funding while building investor-ready businesses. With expertise in sales strategy, marketing execution, supply chain readiness and financial planning, we bridge the gap between vision and scalable growth.\n\n Our mission: to transform promising brands into VC-backed, high-growth companies.",
   primaryCta: "Get Started",
   secondaryCta: "Learn More",
   trustIndicators: [

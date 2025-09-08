@@ -10,8 +10,8 @@ import CTA from '@/components/cta/cta'
 import Footer from '@/components/footer/footer'
 
 export const metadata: Metadata = {
-  title: 'StryveAhead Advisors - Accelerate Scale, Unlock Competitive Advantage, Maximise Profitability',
-  description: 'We partner with high-growth brands to accelerate scale, unlock competitive advantage, and maximise profitability. End-to-end solutions from strategic planning to execution excellence.',
+  title: 'Raise. Scale. Grow.',
+  description: 'At StryveAhead Advisors, we empower D2C founders to secure early-stage funding while building investor-ready businesses. With expertise in sales strategy, marketing execution, supply chain readiness and financial planning, we bridge the gap between vision and scalable growth. Our mission: to transform promising brands into VC-backed, high-growth companies.',
 }
 
 // Preload critical data and images
