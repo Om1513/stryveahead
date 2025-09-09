@@ -17,13 +17,13 @@ export default function LargeTeamCard({
 }: LargeTeamCardProps) {
   return (
     <div 
-      className="group flex w-full max-w-[640px] p-8 flex-col items-center gap-8 rounded-2xl bg-white shadow-[24px_30px_51px_0_rgba(0,0,0,0.10)] transition-all duration-300 ease-out hover:shadow-[24px_30px_51px_0_rgba(0,0,0,0.15)] hover:scale-[1.02] focus-within:shadow-[24px_30px_51px_0_rgba(0,0,0,0.15)] focus-within:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:transform-none motion-reduce:focus-within:transform-none active:scale-[0.98] touch:active:scale-[0.98]"
+      className="group flex w-full max-w-[640px] p-2 sm:p-6 flex-col items-center gap-4 sm:gap-4 rounded-2xl bg-white shadow-[24px_30px_51px_0_rgba(0,0,0,0.10)] transition-all duration-300 ease-out hover:shadow-[24px_30px_51px_0_rgba(0,0,0,0.15)] hover:scale-[1.02] focus-within:shadow-[24px_30px_51px_0_rgba(0,0,0,0.15)] focus-within:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 motion-reduce:transition-none motion-reduce:hover:transform-none motion-reduce:focus-within:transform-none active:scale-[0.98] touch:active:scale-[0.98]"
       tabIndex={0}
       role="article"
       aria-label={`Team member: ${name}, ${title}`}
     >
       {/* Image */}
-      <div className="relative w-full max-w-[360px] h-[300px] rounded-2xl overflow-hidden">
+      <div className="relative w-full max-w-[440px] h-[300px] sm:max-w-[360px] sm:h-[300px] rounded-2xl overflow-hidden sm:p-0">
         <Image 
           src={imageUrl}
           alt={`${name} - ${title}`}
@@ -34,9 +34,9 @@ export default function LargeTeamCard({
       </div>
       
       {/* Content */}
-      <div className="flex flex-col items-center gap-6 self-stretch">
-        <div className="flex flex-col items-center gap-6 self-stretch">
-          <div className="flex flex-col items-center gap-4 self-stretch">
+      <div className="flex flex-col items-center gap-3 sm:gap-6 self-stretch">
+        <div className="flex flex-col items-center gap-3 sm:gap-6 self-stretch">
+          <div className="flex flex-col items-center gap-2 sm:gap-4 self-stretch">
             <div className="self-stretch text-center font-inter text-[32px] font-bold leading-8 text-neutral-900">
               {name}
             </div>
@@ -48,7 +48,7 @@ export default function LargeTeamCard({
               {title}
             </div>
             {bio && (
-              <div className="self-stretch text-center font-inter text-lg font-normal leading-7 text-neutral-500 mt-4 max-w-[500px]">
+              <div className="hidden sm:block self-stretch text-center font-inter text-lg font-normal leading-7 text-neutral-500 mt-4 max-w-[500px]">
                 {bio}
               </div>
             )}
