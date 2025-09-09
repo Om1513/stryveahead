@@ -30,14 +30,14 @@ export default async function Home() {
     <main className="pt-20">
       <Hero />
       <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
-        <section id="services">
-          <Services />
-        </section>
-      </Suspense>
-      <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
         <section id="about">
           <About />
           <Stats />
+        </section>
+      </Suspense>
+      <Suspense fallback={<div className="h-96 bg-gray-50 animate-pulse" />}>
+        <section id="services">
+          <Services />
         </section>
       </Suspense>
       <Suspense fallback={<div className="h-64 bg-gray-50 animate-pulse" />}>

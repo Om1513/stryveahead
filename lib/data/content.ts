@@ -85,7 +85,7 @@ export const aboutContent = {
     "Provide end-to-end solutions from strategic planning to execution excellence"
   ],
   contactSection: {
-    title: "Ready to Scale Your Brand?",
+    title: "Contact Us",
     phone: "+91 99209 52802",
     email: "info@stryveahead.com"
   },
@@ -108,7 +108,7 @@ export const statsContent = {
     },
     {
       id: "channels-covered",
-      number: '10',
+      number: '10+',
       label: 'Service Areas'
     }
   ]

@@ -23,12 +23,12 @@ export default function LargeTeamCard({
       aria-label={`Team member: ${name}, ${title}`}
     >
       {/* Image */}
-      <div className="relative w-full max-w-[480px] h-[400px] rounded-2xl overflow-hidden">
+      <div className="relative w-full max-w-[360px] h-[300px] rounded-2xl overflow-hidden">
         <Image 
           src={imageUrl}
           alt={`${name} - ${title}`}
           fill
-          sizes="(max-width: 768px) 100vw, 480px"
+          sizes="(max-width: 768px) 100vw, 360px"
           className="object-contain"
         />
       </div>

@@ -72,7 +72,7 @@ export default function Services() {
           >
             {/* Title */}
             <motion.div className="lg:max-w-[545px]" variants={staggerItem}>
-              <h2 className="font-inter text-[60px] font-bold leading-[40px] text-heading">
+              <h2 className="font-inter text-[67px] font-bold leading-[80px] text-heading">
                 {servicesContent.title}
               </h2>
             </motion.div>
