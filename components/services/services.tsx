@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Container from '@/components/container'
 import ServiceCard from './service-card'
 import ServiceModal from './service-modal'
@@ -35,6 +35,35 @@ const getServiceIcon = (iconName: string) => {
 export default function Services() {
   const [selectedService, setSelectedService] = useState<typeof servicesContent.services[0] | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Detect mobile to change animation behavior (type-safe)
+  useEffect(() => {
+    const mql = window.matchMedia('(max-width: 640px)')
+
+    const setFromList = (list: MediaQueryList) => {
+      setIsMobile(list.matches)
+    }
+
+    setFromList(mql)
+
+    const handleChange = (event: MediaQueryListEvent) => setIsMobile(event.matches)
+
+    if (typeof mql.addEventListener === 'function') {
+      mql.addEventListener('change', handleChange)
+      return () => mql.removeEventListener('change', handleChange)
+    } else {
+      // Safari < 14
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore legacy API supported in older Safari
+      mql.addListener(handleChange)
+      return () => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore legacy API supported in older Safari
+        mql.removeListener(handleChange)
+      }
+    }
+  }, [])
 
   const openModal = (service: typeof servicesContent.services[0]) => {
     setSelectedService(service)
@@ -48,7 +77,7 @@ export default function Services() {
 
   return (
     <section 
-      className="relative py-24 bg-white overflow-hidden"
+      className="relative py-16 sm:py-24 bg-white overflow-hidden"
       aria-label="Services section"
     >
       {/* Background decorative elements */}
@@ -64,22 +93,22 @@ export default function Services() {
         <div className="relative">
           {/* Header Section */}
           <motion.div 
-            className="grid lg:grid-cols-2 gap-12 mb-24"
+            className="grid lg:grid-cols-2 gap-6 sm:gap-12 mb-16 sm:mb-24 place-items-center lg:place-items-start"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
             {/* Title */}
-            <motion.div className="lg:max-w-[545px]" variants={staggerItem}>
-              <h2 className="font-inter text-[67px] font-bold leading-[80px] text-heading">
+            <motion.div className="lg:max-w-[545px] w-full" variants={staggerItem}>
+              <h2 className="font-inter text-[55px] leading-[60px] sm:text-[67px] sm:leading-[80px] font-bold text-heading text-center lg:text-left mb-6 sm:mb-0">
                 {servicesContent.title}
               </h2>
             </motion.div>
             
             {/* Description */}
-            <motion.div className="lg:max-w-[661px] lg:ml-auto" variants={staggerItem}>
-              <p className="font-inter text-base font-normal leading-6 text-paragraph mt-8">
+            <motion.div className="lg:max-w-[661px] lg:ml-auto w-full" variants={staggerItem}>
+              <p className="font-inter text-body-lg font-normal leading-6 text-paragraph mt-0 sm:mt-8 text-center lg:text-left mx-auto">
                 {servicesContent.description}
               </p>
             </motion.div>
@@ -89,9 +118,9 @@ export default function Services() {
           <motion.div 
             className="relative"
             variants={fadeInUp}
-            initial="hidden"
+            initial={isMobile ? 'visible' : 'hidden'}
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: isMobile ? 0.01 : 0.2 }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {servicesContent.services.map((service) => (

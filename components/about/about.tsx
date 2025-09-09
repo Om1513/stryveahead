@@ -42,7 +42,7 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.h2 
-              className="text-[67px] font-bold leading-[80px] text-neutral-900 mb-4 sm:mb-6 font-inter"
+              className="text-[67px] font-bold leading-[80px] text-neutral-900 mb-4 sm:mb-6 font-inter text-center sm:text-left"
               variants={staggerItem}
             >
               {aboutContent.title}

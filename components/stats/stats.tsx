@@ -22,7 +22,7 @@ export default function Stats() {
 
   return (
     <section 
-      className="relative py-24 bg-[#F5F5F5] overflow-hidden"
+      className="relative py-16 sm:py-24 bg-[#F5F5F5] overflow-hidden"
       onMouseLeave={handleCardLeave}
     >
       {/* Decorative Circles Background */}

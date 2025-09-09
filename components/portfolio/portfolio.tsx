@@ -3,7 +3,7 @@ import ClientLogoBelt from './client-logo-belt'
 
 export default function Portfolio() {
   return (
-    <div className="py-20 bg-white">
+    <div className="py-12 sm:py-20 bg-white">
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-[60px] font-bold leading-[60px] text-gray-900 mb-6 font-inter">

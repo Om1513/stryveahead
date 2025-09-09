@@ -18,56 +18,56 @@ export const servicesContent = {
   services: [
     {
       id: "sales-strategy",
-      title: 'Fundraising & Investor Readiness',
+      title: 'Fundraising &\nInvestor Readiness',
       description: 'Unlock capital with clarity, guiding you from outreach to due diligence.',
       detailedDescription: 'We craft pitch decks, financial models, and growth narratives while connecting you with the right investors.',
       icon: 'trending_up'
     },
     {
       id: "platform-onboarding",
-      title: 'Sales Strategy at Scale',
+      title: 'Sales Strategy\nat Scale',
       description: 'Engineer your growth roadmap.',
       detailedDescription: 'We define positioning, identify high-potential markets, and design the right channel mix -- while driving execution through seamless product launches (NPIs), team training, and sales playbooks that turn opportunities into revenue.',
       icon: 'storefront'
     },
     {
       id: "marketing-conversion",
-      title: 'Marketing & Conversion Strategy',
+      title: 'Marketing &\nConversion Strategy',
       description: 'Turn awareness into ROI.',
       detailedDescription: 'We build high-impact campaigns, optimise marketing spends as a % of GMV, and deploy sampling programs, partnerships, and conversion-driven initiatives to boost share of voice and sales velocity.',
       icon: 'campaign'
     },
     {
       id: "operations-supply",
-      title: 'Operations & Supply Chain Excellence',
+      title: 'Operations & Supply\nChain Excellence',
       description: 'Scale without disruption.',
       detailedDescription: 'From inventory control to production SOPs and fulfilment frameworks we help connect with the right logistics company, optimal allocation, and smooth multi-city distribution.',
       icon: 'inventory'
     },
     {
       id: "financial-planning",
-      title: 'Financial Planning & Unit Economics',
+      title: 'Financial Planning &\nUnit Economics',
       description: 'Sustainable growth begins with numbers.',
       detailedDescription: 'We design SKU-level financial models, align pricing strategies with market dynamics, and manage budget allocations to maximise top-line expansion and bottom-line efficiency.',
       icon: 'account_balance_wallet'
     },
     {
       id: "growth-intelligence",
-      title: 'Growth Intelligence Dashboard (Flagship)',
+      title: 'Growth Intelligence\nDashboard (Flagship)',
       description: 'Your growth, quantified.',
       detailedDescription: 'Our data-powered dashboard provides real-time SKU-level intelligence, offering clarity on inventory movement, sell-through rates, pricing and discount optimisation. It also tracks competitor activity, benchmarks visibility, and surfaces market trends through keyword and share-of-voice analytics. With dynamic alerts and actionable reports, it transforms guesswork into informed, precision-led growth.',
       icon: 'analytics'
     },
     {
       id: "sales-execution",
-      title: 'Sales Execution & Capability Enablement',
+      title: 'Sales Execution &\nCapability Enablement',
       description: 'Empower teams to drive outcomes.',
       detailedDescription: 'We train internal teams, optimise NPIs (new product introductions), and equip sales leaders with tools and playbooks to convert every opportunity into measurable revenue.',
       icon: 'groups'
     },
     {
       id: "strategic-advisory",
-      title: 'Strategic Advisory & Retainership',
+      title: 'Strategic Advisory &\nRetainership',
       description: 'Growth as a partnership, not a project.',
       detailedDescription: 'Through ongoing reviews, KPI tracking, and real-time advisory, we stay embedded as your execution partner, ensuring your strategy remains relevant, agile, and ahead of the curve.',
       icon: 'support_agent'

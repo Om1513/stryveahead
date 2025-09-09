@@ -55,26 +55,26 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
           {/* Hero Content */}
           <motion.div 
-            className="text-white lg:flex-[3] lg:max-w-5xl"
+            className="text-white lg:flex-[3] lg:max-w-5xl text-center sm:text-left"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
             <motion.h1 
-              className="text-[55px] font-bold font-inter mb-6 sm:mb-8 leading-[60px] tracking-[-0.02em]"
+              className="text-[55px] font-bold font-inter mb-6 sm:mb-8 leading-[60px] tracking-[-0.02em] text-center sm:text-left"
               variants={staggerItem}
             >
               {heroContent.title}
             </motion.h1>
 
             <motion.p 
-              className="text-body-lg sm:text-xl font-inter mb-8 sm:mb-12 text-white/90 leading-[1.5] font-medium tracking-[-0.01em]"
+              className="text-body-lg sm:text-xl font-inter mb-8 sm:mb-12 text-white/90 leading-[1.5] font-medium tracking-[-0.01em] text-center sm:text-left"
               variants={staggerItem}
             >
               {heroContent.description}
             </motion.p>
 
-            <motion.div variants={staggerItem}>
+            <motion.div variants={staggerItem} className="flex justify-center sm:justify-start">
               <Link href="#contact">
                 <Button
                   size="lg"

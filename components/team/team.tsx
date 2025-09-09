@@ -8,7 +8,7 @@ import { slideInLeft, slideInRight } from '@/lib/animations/variants'
 
 export default function Team() {
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
+    <section className="relative py-16 sm:py-24 bg-white overflow-hidden">
 
       {/* Background circle on the right */}
       <div className="absolute right-[72px] top-[108px] w-[496px] h-[576px] rounded-[80px] bg-neutral-600 opacity-5"></div>

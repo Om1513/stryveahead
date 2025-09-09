@@ -76,7 +76,7 @@ export default function CTA() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-white relative overflow-hidden">
+    <section id="contact" className="py-16 sm:py-24 bg-white relative overflow-hidden">
       {/* Background Circular Patterns */}
       <div className="absolute inset-0 flex items-center justify-center">
         <svg className="w-full h-full max-w-[1440px] max-h-[1440px]" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">

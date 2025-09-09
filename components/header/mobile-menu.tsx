@@ -51,14 +51,18 @@ export default function MobileMenu({
     setIsOpen(false)
   }
 
+  const closeMenu = () => {
+    setIsOpen(false)
+  }
+
   return (
-    <>
+    <div className="relative">
       {/* Mobile Menu Button */}
       <Button
         variant="ghost"
         size="icon"
         className={cn(
-          'sm:hidden relative z-[60] w-10 h-10',
+          'sm:hidden relative z-[60] w-10 h-10 hover:bg-neutral-100',
           className
         )}
         onClick={() => setIsOpen(!isOpen)}
@@ -82,60 +86,60 @@ export default function MobileMenu({
         </div>
       </Button>
 
-      {/* Backdrop */}
-      <div
-        className={cn(
-          'fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-[200ms] motion-reduce:transition-none sm:hidden z-[100]',
-          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        )}
-        onClick={() => setIsOpen(false)}
-        aria-hidden="true"
-      />
+      {/* Backdrop and Menu Panel */}
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm sm:hidden z-[100]"
+            onClick={closeMenu}
+            aria-hidden="true"
+          />
 
-      {/* Mobile Menu Panel */}
-      <FocusTrap active={isOpen}>
-        <div
-          id="mobile-menu"
-          className={cn(
-            'fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-[300ms] motion-reduce:transition-none ease-out sm:hidden z-[110]',
-            isOpen ? 'translate-x-0' : 'translate-x-full'
-          )}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Mobile navigation menu"
-        >
-          {/* Menu Header */}
-          <div className="flex items-center justify-between p-6 border-b border-neutral-200">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(false)}
-              className="w-10 h-10 -ml-2"
-              aria-label="Close menu"
+          {/* Mobile Menu Panel - dropdown anchored to viewport top-right */}
+          <FocusTrap active={isOpen}>
+            <div
+              id="mobile-menu"
+              className="fixed top-20 right-4 w-80 max-w-[92vw] max-h-[80vh] overflow-auto bg-white shadow-2xl rounded-xl border border-neutral-200 sm:hidden z-[110]"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile navigation menu"
+              style={{ backgroundColor: 'white' }}
             >
-              <X className="w-5 h-5" />
-            </Button>
-            <span className="text-lg font-semibold font-inter text-neutral-900 flex-1 text-center -ml-10">
-              Menu
-            </span>
-          </div>
+              {/* Menu Header */}
+              <div className="flex items-center justify-between p-4 border-b border-neutral-200 bg-white rounded-t-xl">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={closeMenu}
+                  className="w-18 h-12 -ml-3 hover:bg-neutral-100"
+                  aria-label="Close menu"
+                >
+                  <X className="w-5 h-5 text-neutral-900" />
+                </Button>
+                <span className="text-base font-semibold font-inter text-neutral-900 flex-1 text-center -ml-6">
+                  Menu
+                </span>
+              </div>
 
-          {/* Navigation Items */}
-          <nav className="py-6" role="navigation" aria-label="Mobile navigation">
-            <div className="flex flex-col space-y-1 px-6">
-              {navigationItems.map((item) => (
-                <NavLink
-                  key={item.href}
-                  item={item}
-                  onClick={handleLinkClick}
-                  isActive={currentPath === item.href}
-                  className="w-full justify-start text-base py-3 px-4 after:hidden hover:bg-neutral-50 rounded-md transition-all duration-200 hover:translate-x-1 motion-reduce:transition-none motion-reduce:hover:translate-x-0"
-                />
-              ))}
+              {/* Navigation Items */}
+              <nav className="py-3 bg-white flex-1" role="navigation" aria-label="Mobile navigation">
+                <div className="flex flex-col space-y-1 px-4 pb-4">
+                  {navigationItems.map((item) => (
+                    <NavLink
+                      key={item.href}
+                      item={item}
+                      onClick={handleLinkClick}
+                      isActive={currentPath === item.href}
+                      className="w-full justify-start text-base py-3 px-4 after:hidden hover:bg-neutral-50 rounded-md transition-all duration-200 hover:translate-x-1 motion-reduce:transition-none motion-reduce:hover:translate-x-0"
+                    />
+                  ))}
+                </div>
+              </nav>
             </div>
-          </nav>
-        </div>
-      </FocusTrap>
-    </>
+          </FocusTrap>
+        </>
+      )}
+    </div>
   )
 }

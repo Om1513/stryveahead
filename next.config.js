@@ -1,8 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Enable static export for cPanel deployment
+  output: 'export',
+  trailingSlash: true,
+  skipTrailingSlashRedirect: true,
   
-  // Image optimization configuration
+  // Image optimization configuration for static export
   images: {
+    unoptimized: true, // Required for static export
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [320, 640, 768, 1024, 1280, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
