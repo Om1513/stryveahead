@@ -1,0 +1,15 @@
+# Basic protection for admin directory
+# For production, use proper authentication
+
+# Allow only specific files
+<Files "view_contacts.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# Deny access to all other files
+<FilesMatch "^(?!view_contacts\.php$).*$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
